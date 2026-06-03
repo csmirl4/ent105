@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  The Synergy Reality Test — client-facing methodology one-pager
+%  Companion to value-creation-bridge.tex. Draft concept by the ENT 105
+%  team for Creo Advisors. Compile: pdflatex synergy-reality-test.tex
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{hook}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{sowhat}{colback=creoaccent!8,colframe=creoaccent,
+  boxrule=0.6pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt}
+
+\newcommand{\durable}{\textcolor{creoaccent}{\textbf{Durable}}}
+\newcommand{\fragile}{\textcolor{gray!55!black}{\textbf{Fragile}}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{creonavy} The Synergy Reality Test}\\[4pt]
+{\large\color{creoaccent} How much of your roll-up's synergy is durable --- and how much
+will competition take back?}\\[5pt]
+{\normalsize Separating real efficiency from fragile rent in buy-and-build.}
+\end{center}
+
+\vspace{2pt}\hrule\vspace{8pt}
+
+\begin{hook}
+\textbf{Margin going up is not the question.} In a buy-and-build, consolidating the market
+\emph{always} lifts pricing power --- so a synergy model that shows margins rising proves
+nothing. The total rent in a market is conserved; consolidation only \textbf{moves it from the
+pool competition was eroding into the pool you now protect}. A roll-up \textbf{captures} rent ---
+it does not create it. The synergy is real only to the extent it is \textbf{durable}. The Synergy
+Reality Test tells you how much of it is.
+\end{hook}
+
+\section{What it answers}
+\begin{enumerate}[leftmargin=1.6em]
+  \item \textbf{Durable or fragile?} Of the projected synergy, how much is \durable{} ---
+  genuine efficiency you recaptured, which sticks --- versus \fragile{}: margin gained
+  simply by having fewer competitors, which a new entrant can undo and which draws antitrust
+  scrutiny?
+  \item \textbf{How far can you consolidate?} Where is the \textbf{natural floor} --- the
+  free-entry level of players below which the extra margin sits above what entry will tolerate,
+  and gets competed back away?
+\end{enumerate}
+
+\section{How it works}
+\textbf{Capture, not creation.} The total economic rent in a market is conserved; consolidation
+only moves it between two pools --- the rent competition is dissipating, and the rent you
+protect. A roll-up shifts rent from the first into the second; the total is unchanged. That
+reframes ``synergy'' as a split, not a sum:
+\begin{itemize}
+  \item \durable{} \textbf{share --- efficiency recaptured.} Competition wastes resources
+  (duplicated overhead, value-destroying price wars). Consolidating eliminates that waste ---
+  a genuine, lasting gain that takes nothing from anyone.
+  \item \fragile{} \textbf{share --- competition-reduction rent.} The rest is margin you earn
+  purely by being one of fewer players. It is a transfer from customers, it invites new
+  entrants, and it is the part antitrust cares about. It does not last.
+\end{itemize}
+\textbf{The natural floor.} Every market has a free-entry number of players, set by how costly it
+is to enter and how differentiated the product is. Consolidate \emph{to} that number and the gains
+are durable; push \emph{below} it and the extra margin rises above what entry tolerates and gets
+competed back. There is a markup entry cannot erode --- the durable ceiling on what consolidation
+can hold.
+
+\section{Why you can trust it --- and what it won't tell you}
+\textbf{What's rigorous:} the test rests on the same conservation backbone as the Value-Creation
+Bridge --- because total rent is conserved, captured rent splits into durable and fragile with no
+overlap and no residual, and the natural floor is the market's free-entry level, a formal result
+rather than a rule of thumb. \textbf{The split arithmetic and the free-entry-floor formula are
+exact and self-checking} --- you can verify them on the page; the mechanics, not the inputs.
+
+\smallskip
+\textbf{What it deliberately does \emph{not} claim:} it is \textbf{not} an ``optimal number of
+acquisitions'' calculator. On its own the geometry says ``consolidate fully or not at all''; a real
+stopping point depends on integration costs and antitrust risk, which we factor in as
+\emph{explicit, stated} inputs --- not something the math decides for you. And it gives the durable
+\emph{level}, not the \emph{speed} at which fragile rent erodes; how fast entry arrives is a
+judgment we flag, never a number we invent.
+
+\section{What we need / what you get}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{p{6.6cm} p{6.6cm}}
+\toprule
+\textbf{Inputs (from you, stated as assumptions)} & \textbf{Outputs (from us)} \\
+\midrule
+An estimate of the durable share (genuine efficiency vs.\ competition reduction); entry cost and
+product differentiation; antitrust thresholds. &
+The synergy split into durable vs.\ fragile; the free-entry floor and durable markup; a
+``price-on-the-durable-number'' verdict; and a flag on which acquisitions buy fragile rent. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Worked example (illustrative)}
+% ======================================================================
+A platform in a fragmented market of \textbf{6 competitors} pitches a buy-and-build to
+consolidate to \textbf{3}, projecting \textbf{\$60M} of annual EBITDA synergy --- which, in full,
+is rent the consolidation \emph{captures}. The Test runs two checks.
+
+\smallskip
+\textbf{Check 1 --- of the \$60M, how much is durable?} We estimate the durable share at
+\textbf{60\%} --- genuine cost/efficiency recapture rather than pure competition reduction --- and
+apply it to the captured \$60M:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r l}
+\toprule
+\textbf{Projected synergy} & \textbf{\$M} & \textbf{Character} \\
+\midrule
+Efficiency genuinely recaptured (durable, 60\%) & 36 & \durable{} --- sticks \\
+Competition-reduction rent (40\%)               & 24 & \fragile{} --- reverts \\
+\midrule
+\textbf{Headline synergy} & \textbf{60} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Check 2 --- how far can you consolidate before it's fragile?} The market's free-entry
+floor works out to \textbf{4 players}, with an entry-proof markup entry cannot erode below:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Consolidation step} & \textbf{Character} \\
+\midrule
+6 $\rightarrow$ 4 players & \durable{} --- consolidating down to the natural floor \\
+4 $\rightarrow$ 3 players & \fragile{} --- one step below the floor; entry restores $\sim$4 and competes the margin away \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize The figures are the exact decomposition, with no residual. \emph{Check~1:} with a
+durable share $\rho=0.60$ on the captured \$60M, the durable part is $\rho\times 60=36$ and the
+fragile part $(1-\rho)\times 60=24$ (\$M), reconciling to \$60M. \emph{Check~2} is structural ---
+not a second dollar deduction: the natural floor is the free-entry count
+$n^{*}=\sqrt{t/f}=\sqrt{20/1.25}=4$ players (differentiation $t$ and entry cost $f$ taken as \$20M
+and \$1.25M), at which the entry-proof markup is $\sqrt{tf}=5$ (\$M) and durable concentration is
+$1/n^{*}=\sqrt{f/t}=0.25$. The two checks are complementary lenses on the same fragile rent --- the
+$\rho$-split sizes it in dollars, the floor locates it in the deal sequence --- and are never added.}
+
+\begin{sowhat}
+\textbf{So what.} The \$60M pitch is really \textbf{\$36M of durable synergy.} The other
+\textbf{\$24M is fragile} --- competition-reduction rent that entry and antitrust will erode. Check
+2 locates it: the last acquisition (\mbox{$4\!\rightarrow\!3$}) pushes below the natural 4-player
+floor, so its margin sits above the level entry tolerates. \textbf{Price the platform on the
+durable \$36M, not the headline \$60M; treat 4 players as the natural floor; and recognize the last
+deal buys rent that reverts.} If you still pursue it, do so with eyes open --- and budget for the
+entry and antitrust response.
+\end{sowhat}
+
+\textbf{Assumptions --- stated, because that is the point.} The durable share (60\%) is your
+estimate of real efficiency versus competition reduction; the natural floor (4 players) follows
+from the market's entry cost and differentiation; reversion is treated as eventual, with timing
+flagged as a judgment, not modeled. The split arithmetic and the free-entry-floor formula are
+fixed; the inputs are yours --- change any and the test updates transparently. The rigor is exactly
+as good as the assumptions, and the assumptions are visible.
+
+\vspace{6pt}\hrule\vspace{5pt}
+{\footnotesize\itshape Companion to ``The Value-Creation Bridge.'' Draft methodology concept
+prepared by the ENT 105 team for Creo Advisors. Figures are illustrative. The durable/fragile split
+and the free-entry floor are grounded in conservation-based accounting; the durable share, entry cost, differentiation, antitrust thresholds, and
+reversion timing are client-specific inputs set at the engagement's scoping stage.}
+
+\end{document}

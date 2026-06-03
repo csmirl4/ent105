@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  Presentation Prep — AI Value-Creation Marketing Plan (flagship)
+%  Internal kit for Connor (quant/Q&A) & Fiona (narrative). ENT 105 / Creo.
+%  Compile: pdflatex presentation-prep.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\newtcolorbox{keyrule}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{landmine}{colback=red!5,colframe=red!60!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+\newcommand{\F}{\textcolor{creoaccent}{\textbf{[Fiona]}}}
+\newcommand{\C}{\textcolor{creonavy}{\textbf{[Connor]}}}
+
+\title{\textbf{\color{creonavy} Presentation Prep --- AI Value-Creation Marketing Plan}\\[3pt]
+\large Run-of-show, speaker split, reveal discipline, and Q\&A playbook}
+\author{\normalsize Internal kit for Connor \& Fiona --- ENT 105 / Creo}
+\date{\normalsize 2 June 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{keyrule}
+\textbf{The one rule: rigor over hype --- and propose, don't impose.} This plan's whole edge is
+that Creo is the voice that \emph{won't} overclaim AI in a market drowning in AI claims. So the
+presentation has to \emph{model} that discipline. Lead with the honest insight --- \textbf{AI
+value is a map, not a multiplier}, and the durable play is a \textbf{swap, not a purge}. Present
+the AI direction as our \emph{evidence-based recommendation} (Creo decides --- we're not imposing
+it), and meet the credibility question head-on instead of dodging it. \textbf{Never sell AI
+harder than the evidence} --- overselling is the exact failure mode the positioning is built to
+exploit, so doing it on stage would sink the whole pitch.
+\end{keyrule}
+
+\tableofcontents
+\vspace{0.6em}\hrule\vspace{0.8em}
+
+% ======================================================================
+\section{Who presents what}
+% ======================================================================
+\begin{itemize}
+  \item \F{} \textbf{Narrative \& positioning.} The problem, the big idea, the ``so what,'' the
+  campaign, the ask. Owns the room's attention and the story arc.
+  \item \C{} \textbf{Quant depth \& Q\&A.} The ratio map, the worked numbers (CAC/LTV, the
+  rehire-fraction read), the competitive gap, and every probe. Goes exactly as deep as the
+  questioner pushes --- no deeper.
+\end{itemize}
+Rule of thumb: \emph{Fiona makes them want it; Connor makes them believe it.}
+
+% ======================================================================
+\section{Run of show (the flagship segment)}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{p{0.6cm} p{3.2cm} p{7.7cm} p{1.1cm}}
+\toprule
+\# & \textbf{Beat} & \textbf{Key message} & \textbf{Who} \\
+\midrule
+1 & The problem & ``PE's hottest play is the AI roll-up. But buyers are pricing deals on hype ratios with no rigorous way to tell what's real --- and most AI programs show \emph{no} return.'' & \F \\
+2 & The big idea & ``AI value is a \emph{map}, not a multiplier. Creo's market is telling buyers which functions are which --- before they overpay for the average or gut the business chasing it.'' & \F \\
+3 & The two maps & The \emph{function} map (Collapse $\sim$10{,}000:1 / Amplify $\sim$3:1 / Level-up / Keep-human) \emph{and} the \emph{reselection} map (who can be amplified; can management run the swap). & \C \\
+4 & Amplify, not replace & The Microsoft template: cut 15{,}000+ while \emph{mandating} AI and shielding its AI teams. ``The rehire fraction is the readout of the real ratio --- amplification, not 1000:1.'' & \C \\
+5 & The offer & ``The AI-Automatability Diagnostic --- an independent, buyer-side read. Free mini $\to$ productized $\to$ engagement $\to$ recurring.'' & \F/\C \\
+6 & Own the credibility & ``This only works if Creo is \emph{demonstrably} real on AI. Here's the orchestrate-don't-build model and the AI-staffing recommendation --- we say this out loud.'' & \F \\
+7 & The campaign & ``How Creo turns it into pipeline: the annual AI Reality Report $\to$ founder LinkedIn $\to$ roundtable $\to$ a complimentary mini-Diagnostic.'' & \F \\
+8 & The ask & What we recommend Creo do next: own the independent AI-diligence seat, launch the report, decide the AI-staffing path. & \F \\
+\bottomrule
+\end{tabular}
+\end{center}
+The four-bucket colour-code (Collapse / Amplify / Level-up / Keep-human) carries from the plan
+--- keep it consistent on the slides.
+
+% ======================================================================
+\section{The reveal discipline --- the depth ladder}
+% ======================================================================
+For every core claim, have three levels ready and \emph{stop at the level the question
+demands}:
+\begin{itemize}
+  \item \textbf{L1 --- the room.} One sentence, no jargon. (Fiona, or Connor opening.)
+  \item \textbf{L2 --- the analyst.} The mechanics, in Connor's own coursework --- the ratios,
+  the rehire-fraction read, CAC/LTV, and the research lineage. (For Bryan / Akshita / Chelsi.)
+  \item \textbf{L3 --- the boundary.} Only the \emph{post-deal measurement} (the Value-Creation
+  Bridge) reaches here: one line --- ``that's our proprietary measurement methodology; the applied
+  version is self-contained and reconciles to the dollar'' --- nothing to defend; then return to
+  the plan.
+\end{itemize}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}\small
+\begin{tabular}{p{2.7cm} p{4.3cm} p{4.4cm}}
+\toprule
+\textbf{Claim} & \textbf{L1 (room)} & \textbf{L2 (Connor's depth)} \\
+\midrule
+Map, not multiplier & ``AI helps different jobs by wildly different amounts.'' & A business is a portfolio of functions: pure coordination collapses ($\sim$10{,}000:1), knowledge work amplifies ($\sim$3:1), judgment/physical/regulated stays $\sim$1:1. Value lives in the mix --- almost no one measures it. \\
+Swap, not purge & ``Keep your best people, give them AI, drop the busywork.'' & Reselection: amplify the operators who understand the business, collapse the coordination layer, re-select for AI-fluent talent --- without breaking quality. Gut-and-replace is why most programs show no return. \\
+The rehire is the tell & ``If you fire 15k and rehire thousands, AI didn't replace them.'' & The rehire \emph{fraction} reads out the real ratio: rehire a sizable share $\Rightarrow$ amplification (low single digits), not 1000:1. Public template: Microsoft 2025. \\
+Rigorous diagnostic & ``We show our work --- no black box.'' & Grounded in occupational-exposure research (Frey--Osborne task classes; the OpenAI ``exposure $\neq$ automation'' caveat); two axes (function $+$ reselection); transparent. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Q\&A playbook}
+% ======================================================================
+The probes this panel will actually throw, with the answer at the right depth. (\C{} fields the
+quant ones; \F{} the positioning ones, as marked.)
+
+\subsection{``Everyone says they do AI --- why believe Creo?'' \textnormal{(Bryan --- the core probe)}}
+\textbf{L1:} ``That \emph{is} the position. The market is full of people overclaiming AI; Creo is
+the independent, buyer-side voice that won't --- we tell you what AI \emph{can't} durably do.''
+\textbf{L2:} ``And we don't dodge our own credibility (next answer). The Diagnostic is buyer-side
+\emph{assessment}, not us claiming to build everything --- the neutrality is the scarce asset in a
+hype market.''
+
+\subsection{``Does Creo actually have the AI chops to deliver this?'' \textnormal{(Rich / Akshita --- the make-or-break)}}
+``Straight answer: the position only works if Creo is demonstrably real on AI, so we're
+recommending you \emph{close that gap deliberately} --- orchestrate, don't build: Creo is the
+independent diligence-and-architecture brain; specialist vendors do the build. Whether you add a
+senior AI hire, partner, or embed one is a live decision --- and we'd vet any hire with Creo's
+own `is this AI real?' rigor.'' \emph{(Owning this openly is a strength --- it proves the
+rigor-over-hype brand.)}
+
+\subsection{``Isn't this just McKinsey QuantumBlack / BCG X / Bain / the Big Four?'' \textnormal{(Bryan / Chelsi)}}
+\textbf{L1:} ``They sell broad transformation and \emph{the build} --- which makes their read
+conflicted. No one owns the independent, buyer-side, diligence-grade seat.'' \textbf{L2:} ``Bain
+works with $\sim$80\% of the largest sponsors; BCG owns `reshape.' We don't out-scale them --- we
+\emph{flank} them on independence, deal-level rigor, and the reselection read they don't do. A
+boutique wins on focus and distribution, not size.''
+
+\subsection{``Is the AI roll-up real, or just hype?'' \textnormal{(Rich)}}
+``Real and funded --- Elad Gil's thesis, General Catalyst (Long Lake took Amex GBT private for
+\$6.3B), Thrive Holdings --- across legal, accounting, IT, BPO, healthcare. \emph{But} the
+returns aren't there yet: BCG finds only $\sim$5\% capture real value while 60\% lag, and
+$\sim$95\% of GenAI pilots fail. That gap --- hot strategy, no rigorous read --- is precisely the
+opening.''
+
+\subsection{``1000:1 --- won't AI just replace these workers?'' \textnormal{(anyone)}}
+``No --- that's the hype the plan corrects. The handoff is a \emph{map}: $\sim$3:1 in knowledge
+work, $\sim$10{,}000:1 only in pure coordination (the Uber dispatch layer), $\sim$1:1 in
+judgment, physical, relationship, and regulated work. Price the mix, not the average.''
+
+\subsection{``Your `reselection' idea --- isn't that just layoffs?'' \textnormal{(Akshita)}}
+``It's a \emph{swap, not a purge}. You keep and amplify the people who truly understand the
+business, collapse the busywork, and re-select for AI-fluent talent --- without breaking quality.
+Gut-and-replace is the failure mode: Klarna went AI-only on support and had to re-hire humans.''
+
+\subsection{``Where's the Microsoft data from?'' \textnormal{(Bryan)}}
+``Public record: Microsoft cut 15{,}000+ in 2025, made AI use `no longer optional' and tied it to
+performance reviews (the Liuson memo), and shielded its AI/Copilot teams from the 2026 freeze ---
+all reported and sourced in the plan. We use only the documented version.'' \emph{(Stay on the
+sourced facts --- don't speculate past the public record.)}
+
+\subsection{``What would a sponsor actually pay for?'' \textnormal{(Rich)}}
+\F/\C: ``An independent read that \emph{reprices the deal} --- tells them what the target is
+really worth once you strip the hype ratio. Entry is a free mini-Diagnostic; it ladders to a
+productized Diagnostic, an amplification engagement, and a recurring portfolio read.''
+
+\subsection{``Can a boutique really compete here?'' \textnormal{(Rich / strategy)}}
+``Not on scale --- on focus, independence, credibility, and \emph{distribution}: your warm
+sponsor relationships are an edge the big firms can't buy. Being first to own the independent
+`what can durably be automated, and can this business execute the swap' seat is the moat.''
+
+\subsection{``This seems obvious.'' \textnormal{(Bryan / Chelsi --- name it first)}}
+\textbf{Pre-empt it; say it before they do.} ``This is going to feel obvious the moment we draw
+the map --- and that's the point; the best frameworks do. The opportunity is that \emph{nobody in
+your market actually does it} --- they're all still pricing AI at one hype multiple. Obvious-but-
+nobody-does-it is the most ownable position there is.'' \emph{Welcome the reaction --- it means
+they believe it. It's the good reaction, not a threat.}
+
+\subsection{``How do you prove the value was actually created, post-deal?'' \textnormal{(Akshita / Rich)}}
+``We close the loop with independent measurement --- the Value-Creation Bridge --- separating
+real operational gains from value merely transferred. Diligence $\rightarrow$ amplification
+$\rightarrow$ \emph{measured} result.'' \textbf{If pushed past the applied method:} the hard-stop
+line below --- then back to the plan.
+
+% ======================================================================
+\section{The hard stop (post-deal measurement)}
+% ======================================================================
+The \emph{only} place a deflection is needed is the post-deal measurement (the Bridge). Use
+verbatim, if pushed past the applied method:
+\begin{itemize}
+  \item \textbf{The hard stop:} ``That's our proprietary measurement methodology --- the applied
+  method here is self-contained and, as you can see, reconciles to the dollar.'' Then return to
+  the plan.
+\end{itemize}
+Keep it to that line and move on. Do \textbf{not} gesture at any larger body of theory, and do
+\textbf{not} reference formal proofs or verification of any kind --- you won't be able to field
+the follow-up, and you don't need to.
+
+% ======================================================================
+\section{Landmines --- do not}
+% ======================================================================
+\begin{landmine}
+\begin{itemize}
+  \item \textbf{Don't oversell Creo's current AI capability.} Be honest about the gap and the
+  build/partner plan --- overclaiming is the exact thing the brand critiques.
+  \item \textbf{Don't claim 1000:1 / wholesale replacement.} It's a map and amplification; the
+  ratios are illustrative orders of magnitude, not constants.
+  \item \textbf{Stick to the public record on Microsoft} --- only the documented facts (the cuts,
+  the ``AI is no longer optional'' memo, the AI teams shielded from the freeze). Don't speculate
+  past what's sourced.
+  \item \textbf{Don't promise to build the AI systems.} Orchestrate, don't build --- Creo is the
+  independent brain; vendors build.
+  \item \textbf{Don't impose the AI direction.} It's our \emph{recommendation}; lead by
+  understanding what management wants, and adapt if they want something else.
+  \item \textbf{Don't invoke ``formally verified,'' a ``proof,'' or any larger framework} behind
+  the measurement. Keep it to the proprietary-methodology line and return to the plan.
+  \item \textbf{Don't assert self-reported market figures as fact} (Bain's ``80\%,'' vendor
+  allocations) --- attribute them.
+\end{itemize}
+\end{landmine}
+
+% ======================================================================
+\section{The Value-Creation Bridge --- held as the ``measured proof'' close}
+% ======================================================================
+The Bridge is no longer the headline --- it's the credibility \emph{close}. If the panel presses
+on ``how do you know the value was real?'', bring it in: ``Post-deal, we measure it independently
+--- splitting operational value \emph{created} from value merely \emph{transferred} (multiple,
+leverage, tax), reconciled to the dollar. That's how the Diagnostic's promise is held to
+account.'' Otherwise keep it to one line --- ``and we measure the result'' --- and hold the
+spotlight on the AI plan. (Backing exhibit: the Value-Creation Bridge one-pager + practitioner's
+guide, in reserve.)
+
+\vspace{6pt}\hrule\vspace{5pt}
+{\footnotesize\itshape Internal prep for Connor \& Fiona. Flagship exhibit: the AI Value-Creation
+Marketing Plan (``AI value is a map, not a multiplier''). The Bridge measurement is held in
+reserve as the proof-of-result close --- a proprietary methodology, not detailed here; the
+credibility you present is the evidence and the numbers reconciling --- never an AI claim you
+can't back.}
+
+\end{document}

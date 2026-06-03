@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  The Value-Creation Bridge — client-facing methodology one-pager
+%  Draft concept prepared by the ENT 105 team for Creo Advisors.
+%  Compile: pdflatex value-creation-bridge.tex
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{hook}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{sowhat}{colback=creoaccent!8,colframe=creoaccent,
+  boxrule=0.6pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt}
+
+\newcommand{\created}{\textcolor{creoaccent}{\textbf{Created}}}
+\newcommand{\transferred}{\textcolor{gray!55!black}{\textbf{Transferred}}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{creonavy} The Value-Creation Bridge}\\[4pt]
+{\large\color{creoaccent} How much of your return did you \emph{create} --- and how much was
+\emph{transferred} to you?}\\[5pt]
+{\normalsize Separating operational value from financial engineering --- with no double-counting.}
+\end{center}
+
+\vspace{2pt}\hrule\vspace{8pt}
+
+\begin{hook}
+\textbf{The question every LP is now asking.} With multiple expansion gone and leverage
+expensive, a strong return is no longer self-evidently a \emph{good} return. The question is
+how much of it you actually \textbf{built} --- real, repeatable operational value --- versus
+how much was \textbf{handed to you} by a richer exit multiple, cheap leverage, or a tax
+structure. The Value-Creation Bridge answers that precisely, and then shows exactly where the
+value you built came from.
+\end{hook}
+
+\section{What it answers}
+Two questions, in order:
+\begin{enumerate}[leftmargin=1.6em]
+  \item \textbf{Created or transferred?} Of the total value realized over the hold, how much
+  is genuine operational value the business \emph{created}, and how much is value
+  \emph{transferred} into (or out of) your equity --- multiple re-rating, deleveraging, tax
+  shields, timing?
+  \item \textbf{Where did the created value come from?} The portion you genuinely created,
+  attributed cleanly across the operating levers --- \textbf{pricing}, \textbf{volume}, and
+  \textbf{cost productivity} --- with capital efficiency tying the operations to cash.
+\end{enumerate}
+
+\section{How it works}
+\textbf{Split 1 --- Created vs.\ Transferred.} Take the whole system --- the company and every
+counterparty (buyers, lenders, the tax authority, the next owner). Value the business
+\emph{made} shows up as the total pie growing; value merely \emph{moved} between
+parties leaves the total unchanged and only reshuffles who holds it. Those are two
+non-overlapping pools, and together they account for the entire gain --- nothing falls
+between them.
+
+\smallskip
+\textbf{Split 2 --- Attribution within Created.} The created pool is then split across pricing,
+volume, and cost productivity so that the pieces \emph{add up exactly} to the total created,
+with no leftover ``interaction'' or ``other'' line and no lever double-counted.
+
+\section{Why you can trust the numbers}
+This is what separates the Bridge from a conventional value-bridge slide:
+\begin{itemize}
+  \item \textbf{It sums exactly to the whole.} The pieces reconcile to the realized gain to
+  the dollar --- it is grounded in conservation-based accounting (the same balance principle
+  as double-entry bookkeeping), so the books balancing \emph{is} the decomposition being
+  exact.
+  \item \textbf{No double-counting.} Created and transferred do not overlap, and each operating
+  lever is credited once. The cross-terms that usually get dumped into a residual are
+  allocated by a single, symmetric, defensible rule.
+  \item \textbf{Every assumption is on the page.} The math fixes the \emph{form}; the
+  judgment calls --- where the system boundary sits, how flows are classified, how price is
+  separated from volume --- are stated explicitly, so the answer is transparent and
+  contestable rather than a black box.
+\end{itemize}
+
+\section{What we need / what you get}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{p{6.6cm} p{6.6cm}}
+\toprule
+\textbf{Inputs (from you)} & \textbf{Outputs (from us)} \\
+\midrule
+Entry and exit financials over the hold; deal structure (multiple, leverage, taxes); basic
+price and volume data per major line. &
+A clean Created-vs-Transferred bridge; a one-line ``real vs.\ engineered'' verdict; the
+created value attributed to pricing / volume / cost; and the implication for the next hold's
+value-creation plan. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Worked example (illustrative)}
+% ======================================================================
+A sponsor exits a business after five years at a headline \textbf{3.1$\times$ MOIC} ---
+equity in at \$400M, out at \$1{,}250M, a \textbf{\$850M gain}. A celebrated outcome. The
+Bridge asks: how much did the company actually create?
+
+\smallskip
+\textbf{Split 1 --- of the \$850M gain, how much was created vs.\ transferred?}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r l}
+\toprule
+\textbf{Source of the equity gain} & \textbf{\$M} & \textbf{Bucket} \\
+\midrule
+Operational EBITDA growth (\$100M $\rightarrow$ \$150M, at entry multiple) & 500 & \created \\
+Multiple expansion (10.0$\times$ $\rightarrow$ 11.0$\times$) & 150 & \transferred \\
+Deleveraging (net debt \$600M $\rightarrow$ \$400M) & 200 & \transferred \\
+\midrule
+\textbf{Total equity gain} & \textbf{850} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{sowhat}
+\textbf{So what.} Only \textbf{\$500M --- 59\% --- was value the company created.} The other
+\textbf{41\% (\$350M) was transferred in}: a richer exit multiple (\$150M, paid by the next
+buyer) and deleveraging (\$200M --- value moving from debt to equity as the debt is retired;
+enterprise value is unchanged, so it is a capital-structure transfer, not new value). Neither
+is operational alpha, and neither is guaranteed to repeat. Value the business at the
+\emph{entry} multiple on the \emph{entry} balance sheet and exit equity is about \$900M: the
+headline 3.1$\times$ is really a \textbf{2.25$\times$ of created value} wrapped in financial
+engineering.
+\end{sowhat}
+
+\textbf{Split 2 --- of the \$500M created, where did it come from?}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r r}
+\toprule
+\textbf{Operating lever} & \textbf{\$M} & \textbf{Share} \\
+\midrule
+Pricing (net realized price, $+8.0\%$)        &  95 & 19\% \\
+Volume ($+18.7\%$)                            & 211 & 42\% \\
+Cost productivity (margin, $+17.0\%$)         & 194 & 39\% \\
+\midrule
+\textbf{Total created} & \textbf{500} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize The three levers compound to the $+50\%$ EBITDA growth
+($1.080\times1.187\times1.170=1.50$, i.e.\ \$100M$\rightarrow$\$150M), and the dollars are the
+exact log decomposition of that growth --- so they sum to the created \$500M with no
+``interaction'' or ``other'' residual.}
+
+\begin{sowhat}
+\textbf{So what.} Of the value the company \emph{built}, volume and cost productivity did
+\textasciitilde{}80\% of the work; \textbf{pricing contributed just 19\%.} For a business with
+real brand and switching costs, that is the loudest signal in the analysis: \textbf{pricing is
+the under-exploited lever} --- and the most credible source of value for the next hold.
+\end{sowhat}
+
+\textbf{Assumptions --- stated, because that is the point.} Multiple expansion is treated as
+transferred (no evidence of structural de-risking behind the re-rating); EBITDA growth is
+valued at the \emph{entry} multiple so growth is not conflated with re-rating; deleveraging is
+classified as a within-capital-structure transfer (enterprise value is unchanged by the
+paydown --- a sponsor who credits the cash flow that funded it to operations would reclassify
+it, and the bridge updates); price is separated from volume using the company's own realized
+price index. Change any of these and the bridge updates transparently
+--- the rigor is exactly as good as the assumptions, and the assumptions are visible.
+
+\vspace{6pt}\hrule\vspace{5pt}
+{\footnotesize\itshape Draft methodology concept prepared by the ENT 105 team for Creo
+Advisors. Figures are illustrative. Underlying decomposition grounded in conservation-based
+accounting; assumptions are client-specific and set at the engagement's scoping stage.}
+
+\end{document}

@@ -1,0 +1,301 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  Creo Advisors — Sample Marketing Collateral (ENT 105)
+%  Ready-to-use copy executing the AI value-creation plan:
+%  positioning, messaging, product description, and sample assets.
+%  Draft by the ENT 105 team for Creo. Public-safe; figures illustrative.
+%  Compile: pdflatex creo-marketing-collateral.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\newtcolorbox{bigidea}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{callout}{colback=creoaccent!8,colframe=creoaccent,
+  boxrule=0.6pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt}
+% Ready-to-use copy (looks like a draft asset on the page)
+\newtcolorbox{copybox}[1]{colback=gray!4,colframe=gray!55!black,
+  boxrule=0.5pt,arc=1pt,left=7pt,right=7pt,top=4pt,bottom=5pt,
+  title={\footnotesize\bfseries\color{creonavy}#1},coltitle=creonavy,
+  fonttitle=\footnotesize\bfseries,attach title to upper={\par\smallskip}}
+
+\title{\textbf{\color{creonavy} Creo Advisors --- Sample Marketing Collateral}\\[3pt]
+\large ``AI value is a map, not a multiplier'' --- positioning, messaging, and ready-to-use copy}
+\author{\normalsize Draft sample assets prepared by the ENT 105 team for Creo Advisors}
+\date{\normalsize 2 June 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{bigidea}
+\textbf{What this is.} A sample set of ready-to-use marketing assets that \emph{execute} the AI
+value-creation plan --- so the strategy is concrete, on-brand, and immediately usable. Every
+piece follows the one rule: \textbf{rigor over hype}. Nothing here oversells AI; the credibility
+\emph{is} the restraint. All claims rest on the public record; ratios are illustrative orders of
+magnitude, and self-reported market figures are attributed, not asserted.
+\end{bigidea}
+
+\tableofcontents
+\vspace{0.5em}\hrule\vspace{0.7em}
+
+% ======================================================================
+\section{Positioning statement}
+% ======================================================================
+The formal positioning (Geoffrey Moore format) --- the single source of truth every other asset
+flows from:
+
+\begin{callout}
+\textbf{For} private-equity sponsors and operating partners betting on AI-driven value creation
+--- \textbf{who} today cannot reliably separate durable AI value from hype, and so risk
+overpaying for deals or breaking the businesses they buy --- \textbf{Creo Advisors is} the
+independent AI value-creation advisor \textbf{that} maps, function by function, what AI can
+actually automate and who it can amplify, so you underwrite the real number and capture value
+that lasts. \textbf{Unlike} the Big Four and strategy firms that sell the AI build --- and are
+conflicted by it --- or in-house teams stretched thin across the portfolio, \textbf{Creo is}
+buyer-side, conflict-free, and rigor-over-hype: we tell you what AI \emph{can't} durably do, not
+just what it can.
+\end{callout}
+
+\textbf{Category line.} Independent AI due-diligence and value-creation advisory for private
+equity.\\
+\textbf{Internal short form.} \emph{Creo: the independent, buyer-side authority on what AI can
+actually do in a deal.}
+
+% ======================================================================
+\section{Messaging house}
+% ======================================================================
+One core message on the roof; three pillars holding it up; proof under each.
+
+\begin{callout}
+\textbf{Core message.} \emph{AI value is a map, not a multiplier --- and we draw it.}
+\end{callout}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{p{2.7cm} p{4.5cm} p{5.0cm}}
+\toprule
+\textbf{Pillar} & \textbf{Claim} & \textbf{Proof / reason to believe} \\
+\midrule
+\textbf{Independent} & We're buyer-side and sell no AI systems --- our read isn't conflicted. & Unlike the build-shops and Big Four, no incentive to oversell automation; neutrality is the scarce asset in a hype market. \\
+\textbf{Rigorous \& transparent} & Every call is shown, not asserted --- you can check it. & Grounded in established occupational-exposure research (Frey--Osborne; the OpenAI ``exposure $\neq$ automation'' study); reconciles to the number. \\
+\textbf{Amplify, don't gut} & Durable value is a swap, not a purge. & Deploy-and-fire is why most AI programs show no return ($\sim$95\% of pilots fail; Klarna re-hired humans); we map who to amplify. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Message by buyer} (lead with the line that fits the seat):
+\begin{itemize}
+  \item \textbf{Deal partner (pre-deal):} ``Price on the real ratio, not the pitch --- before you overpay.''
+  \item \textbf{Operating partner (returns to LPs):} ``Most AI programs show no return. We map where the durable value actually is.''
+  \item \textbf{Portfolio CEO (operator):} ``Amplify your best people and collapse the busywork --- without gutting what works.''
+  \item \textbf{LP / IR (amplifier):} ``Back your AI story with diligence you can defend.''
+\end{itemize}
+
+% ======================================================================
+\section{Taglines, boilerplate \& elevator pitch}
+% ======================================================================
+\textbf{Tagline options} (lead candidate first):
+\begin{itemize}
+  \item \emph{AI value is a map, not a multiplier.}
+  \item \emph{We tell you what AI can't do.}
+  \item \emph{Price the real number.}
+  \item \emph{Rigor over hype. Buyer-side, always.}
+  \item \emph{Amplify the business --- don't gut it.}
+\end{itemize}
+
+\begin{copybox}{One-liner (for bios, intros, signatures)}
+Creo Advisors is the independent, buyer-side advisor that tells private-equity sponsors what AI
+can --- and can't --- durably do in a deal.
+\end{copybox}
+
+\begin{copybox}{30-second elevator pitch}
+Every PE firm is chasing the AI roll-up, but most can't tell real AI value from hype --- and the
+data shows it: about 95\% of enterprise AI pilots fail, and only roughly 5\% of companies capture
+real value. Creo is the independent, buyer-side advisor that maps, function by function, what AI
+can actually automate and who it can amplify --- so sponsors price the real number instead of the
+pitch, and build value that lasts instead of gutting the business. We're the one voice that tells
+you what AI \emph{can't} do.
+\end{copybox}
+
+\begin{copybox}{Boilerplate (standard --- press, LinkedIn ``About,'' deck back page)}
+Creo Advisors is a Boston-based boutique advisory firm specializing in independent AI value
+creation for private equity. Creo helps sponsors and their portfolio companies separate durable
+AI value from hype --- mapping, function by function, what can actually be automated and who can
+be amplified --- so buyers underwrite the real number and capture value that lasts. Independent
+and buyer-side, Creo sells no AI systems and carries no build-side conflict: its only product is
+a rigorous, transparent read on what AI can do in a deal.
+\end{copybox}
+
+% ======================================================================
+\section{Product description --- the AI-Automatability Diagnostic}
+% ======================================================================
+The flagship offer, written as a sell sheet.
+
+\begin{callout}
+\textbf{The AI-Automatability Diagnostic} --- \emph{know what's real before you pay for it.}\\[2pt]
+A fast, independent assessment of how much \emph{durable} value AI can actually create in a
+target --- and whether the business can execute the change without breaking.
+\end{callout}
+
+\textbf{Who it's for.} Deal partners underwriting an AI thesis; operating partners who must show
+AI returns; portfolio CEOs under pressure to ``do AI.''
+
+\textbf{How it works --- two maps.}
+\begin{enumerate}
+  \item \textbf{The function map.} Every function sorted into \emph{Collapse} (pure coordination,
+  near-total automation) / \emph{Amplify} (knowledge work, a few times more effective) /
+  \emph{Level-up} (routine work, AI raises the floor) / \emph{Keep-human} (judgment, physical,
+  relationship, regulated) --- with the real handoff ratio for each.
+  \item \textbf{The reselection map.} Whether the business has operators worth amplifying, and
+  management able to run the swap --- re-select for AI-fluent talent --- without breaking quality.
+\end{enumerate}
+
+\textbf{What you get.}
+\begin{itemize}
+  \item The function-by-function ratio map.
+  \item A \textbf{reselection-readiness} score (amplifiable talent $+$ management's capacity to execute).
+  \item The ``real vs.\ hyped value'' gap --- translated into what the deal is actually worth.
+  \item The amplify / collapse / keep priorities --- and the functions (or deals) to walk away from.
+\end{itemize}
+
+\textbf{The engagement ladder.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\small
+\begin{tabular}{p{2.6cm} p{9.6cm}}
+\toprule
+\textbf{Free} & Complimentary mini-Diagnostic on one target --- the proof, and the lead magnet. \\
+\textbf{Productized} & Fixed-fee full Diagnostic on a deal or portfolio company. \\
+\textbf{Engagement} & The value-creation / amplification roadmap (Creo orchestrates; vendors build). \\
+\textbf{Recurring} & The trusted AI read across the sponsor's portfolio. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Why Creo.} Independent (we don't sell the build) $\cdot$ rigorous and transparent
+(grounded in established automation research; shown, not asserted) $\cdot$ focused on durable
+value (amplify, don't gut). \emph{And the loop closes:} post-deal, Creo measures independently
+whether the projected value was actually created.
+
+% ======================================================================
+\section{The AI Reality Report --- lead-magnet copy}
+% ======================================================================
+\begin{copybox}{Gated-asset landing copy}
+\textbf{The AI Reality Report} --- what actually works, and what actually doesn't.\\[3pt]
+Creo's annual, evidence-based read on where AI is creating real value in private equity --- the
+function ratios that hold up, the failure rates nobody quotes, and the deals that blow up. No
+hype, no vendor spin --- the independent, buyer-side view.\\[3pt]
+\textbf{[ Download the report $\rightarrow$ ]} \quad\emph{(name + work email)}
+\end{copybox}
+
+% ======================================================================
+\section{Website hero copy}
+% ======================================================================
+\begin{copybox}{Homepage hero}
+\textbf{\large AI value is a map, not a multiplier.}\\[4pt]
+Creo is the independent, buyer-side advisor that tells PE sponsors what AI can --- and can't ---
+durably do in a deal. Price the real number. Capture value that lasts.\\[4pt]
+\textbf{[ Get a free AI-Automatability Diagnostic ]} \quad \emph{[ Read the AI Reality Report ]}
+\end{copybox}
+
+\textbf{Three value props} (the band beneath the hero):
+\begin{itemize}
+  \item \textbf{Independent.} We sell no AI systems --- so our read isn't conflicted.
+  \item \textbf{Rigorous.} Grounded in real automation research, reconciled to the number, shown not asserted.
+  \item \textbf{Durable.} We amplify the people who run the business --- we don't gut it.
+\end{itemize}
+
+% ======================================================================
+\section{Sample LinkedIn posts (founder-led)}
+% ======================================================================
+Contrarian, evidence-based, in a founder's voice --- attention \emph{and} credibility.
+
+\begin{copybox}{Post 1 --- ``Map, not multiplier''}
+Every deck I see prices AI at one number. ``AI makes this 10x more productive'' --- one multiple,
+applied to the whole company.\\[3pt]
+That's not how it works. A business is a portfolio of functions, and AI hits each one
+completely differently:\\[2pt]
+$\bullet$ Pure coordination --- dispatching, matching, routing --- can nearly disappear. (Uber
+did this to an entire industry.)\\
+$\bullet$ Knowledge work amplifies a few times over: a great analyst with AI does the work of
+several --- but you still need the analyst.\\
+$\bullet$ Judgment, relationships, regulated work, anything physical --- barely moves.\\[3pt]
+Price the average and you either overpay for the hype or miss the rare function that actually
+collapses. The value --- and the risk --- live in the mix.\\[3pt]
+AI value is a map, not a multiplier. Most buyers are still pricing the multiplier.
+\end{copybox}
+
+\begin{copybox}{Post 2 --- ``The rehire is the tell'' (public-record only)}
+The headlines say AI is replacing workers. Watch what the companies actually do.\\[3pt]
+Microsoft cut more than 15,000 roles last year. It also made AI use ``no longer optional,'' tied
+it to performance reviews, and shielded its own AI teams from the hiring freeze. That's not ``the
+machine took the jobs.'' That's a workforce being re-sorted for who can amplify with AI.\\[3pt]
+Here's the tell that separates real automation from hype: the rehire fraction. When a company
+sheds thousands and then quietly rehires a sizable share, AI didn't replace those people --- it
+raised the bar on who gets to stay. A big rehire fraction means amplification, not the
+1000-to-1 the hype promises.\\[3pt]
+For anyone underwriting an AI roll-up, that's the whole question: are you buying replacement, or
+reselection?
+\end{copybox}
+
+\begin{copybox}{Post 3 --- ``95\% fail''}
+About 95\% of corporate AI pilots fail to deliver. That's not my number --- it's the research.\\[3pt]
+So why does the handful that succeed succeed? It's almost never the model. The winners did three
+unglamorous things:\\[2pt]
+1. Found the functions where AI actually compounds --- and ignored the ones where it doesn't.\\
+2. Amplified their best people instead of replacing their cheapest.\\
+3. Measured the result honestly, and killed what didn't work.\\[3pt]
+The losers bought a platform, fired a department, and waited for margin that never came.\\[3pt]
+If you're paying an AI-roll-up multiple, you're betting you'll be in the 5\%. The only way to
+know is to look --- function by function --- before you sign.
+\end{copybox}
+
+% ======================================================================
+\section{Sample nurture email}
+% ======================================================================
+\begin{copybox}{Email --- sent after an AI Reality Report download}
+\textbf{Subject:} The 5\% --- what separates the AI programs that actually work\\[4pt]
+Hi \{First name\},\\[3pt]
+Thanks for downloading the AI Reality Report. One finding tends to stop people: roughly 95\% of
+enterprise AI pilots fail to deliver a return --- and the 5\% that work rarely have better
+technology. They have a better \emph{map}.\\[3pt]
+That's the idea behind our AI-Automatability Diagnostic: an independent, buyer-side read of where
+AI can actually create durable value in a specific business --- function by function --- and
+whether the team can execute it without breaking what works.\\[3pt]
+If you're underwriting an AI thesis right now, we'll run a \textbf{complimentary mini-Diagnostic}
+on one target. No build pitch --- we don't sell AI systems. Just an honest read on what's real.\\[3pt]
+Worth a 20-minute call?\\[3pt]
+Rich Vitaro --- Creo Advisors\\
+\textbf{[ Book a call ]}
+\end{copybox}
+
+\vspace{4pt}\hrule\vspace{4pt}
+{\footnotesize\itshape Draft sample collateral prepared by the ENT 105 team for Creo Advisors.
+Copy is illustrative and for management review; names, figures, and claims to be finalized with
+Creo. All assets are public-record-only and independent --- the brand promise is rigor over hype,
+so the copy never claims more about AI than the evidence supports.}
+
+\end{document}

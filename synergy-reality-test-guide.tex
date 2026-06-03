@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  The Synergy Reality Test — Practitioner's Guide (methods companion)
+%  The "show me how" document behind synergy-reality-test.tex.
+%  Draft prepared by the ENT 105 team for Creo Advisors.
+%  Compile: pdflatex synergy-reality-test-guide.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\newtcolorbox{note}{colback=creoaccent!7,colframe=creoaccent,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+\newtcolorbox{judgment}{colback=orange!7,colframe=orange!75!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+
+\newcommand{\durable}{\textcolor{creoaccent}{\textbf{durable}}}
+\newcommand{\fragile}{\textcolor{gray!55!black}{\textbf{fragile}}}
+
+\title{\textbf{\color{creonavy} The Synergy Reality Test --- Practitioner's Guide}\\[3pt]
+\large How to run the analysis: the rent split, the entry floor, worked end-to-end}
+\author{\normalsize Methods companion to the one-pager --- for analysts \textbf{(internal)}}
+\date{\normalsize 2 June 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{note}
+\textbf{What this is.} The one-pager \emph{sells} the Synergy Reality Test; this guide
+\emph{runs} it. It is what you reach for when a client (or a skeptical colleague) asks ``show
+me how you split durable from fragile and where the floor comes from.'' Same roll-up as the
+one-pager, carried through end to end.
+\end{note}
+
+\tableofcontents
+\vspace{0.6em}\hrule\vspace{0.8em}
+
+% ======================================================================
+\section{The principle: a roll-up captures rent, it does not create it}
+% ======================================================================
+The governing fact is conservation. The total economic rent in a market is fixed;
+consolidation only \emph{moves} it between pools. For $J$ symmetric competitors the unit of
+market rent splits three ways:
+\[
+  \underbrace{\tfrac{1}{J}}_{\text{protected baseline}}
+  \;+\;
+  \underbrace{\rho\,\tfrac{J-1}{J}}_{D:\ \text{dissipated by competition}}
+  \;+\;
+  \underbrace{(1-\rho)\,\tfrac{J-1}{J}}_{K:\ \text{curvature shield (variety)}}
+  \;=\;1 .
+\]
+$D$ is rent competition wastes (redundant overhead, price wars); $K$ is surplus protected by
+product variety/differentiation; $1/J$ is the monopoly baseline. The dial $\rho\in(0,1)$ is
+the \emph{substitutes-vs-complements} regime: high $\rho$ = mostly wasteful competition,
+low $\rho$ = mostly genuine variety. A roll-up runs two checks off this identity.
+
+% ======================================================================
+\section{Step 0 --- Define the market}
+% ======================================================================
+Fix the relevant antitrust/economic market and count the effective competitors $J$. Synergy
+is measured \emph{within this market}; widen or narrow the boundary and the numbers move.
+\emph{State it.}
+
+% ======================================================================
+\section{Check 1 --- Durable vs.\ fragile (the $\rho$ split)}
+% ======================================================================
+
+\subsection{The mechanics}
+Consolidating one competitor, $J\to J-1$, moves rent into the protected baseline:
+\[
+  \Delta\!\left(\tfrac{1}{J}\right)=\tfrac{1}{J-1}-\tfrac1J=\frac{1}{J(J-1)}\quad(\text{captured}),
+\]
+sourced, because the total is conserved, as
+\[
+  \underbrace{\frac{\rho}{J(J-1)}}_{\text{recaptured waste }(-\Delta D)\ =\ \durable}
+  \;+\;
+  \underbrace{\frac{1-\rho}{J(J-1)}}_{\text{destroyed variety }(-\Delta K)\ =\ \fragile}.
+\]
+So of \emph{every} dollar of captured synergy, fraction $\rho$ is \durable{} (recaptured
+waste --- a real efficiency gain that takes nothing from anyone) and fraction $(1-\rho)$ is
+\fragile{} (variety converted to rent --- a transfer from customers, the antitrust-relevant
+part, which invites entry and reverts). The split is $J$-independent; only its \emph{size}
+$1/(J(J-1))$ depends on $J$.
+
+\subsection{Estimating $\rho$ --- the one judgment that drives everything}
+\begin{judgment}
+$\rho$ is exogenous and it \emph{is} the analysis. Estimate it as the share of the projected
+synergy that is genuine cost/efficiency recapture (consolidating duplicated functions,
+ending value-destroying price competition) versus pure pricing power from fewer rivals. Anchor
+it: scrutinize the synergy model line by line, classify each item as efficiency or
+price-from-concentration, and let $\rho$ be the efficiency share. Document the call.
+\end{judgment}
+
+\subsection{Worked example}
+A platform in a market of $J=6$ pitches consolidation to $3$, projecting \textbf{\$60M} of
+EBITDA synergy --- which, being margin from consolidation, is captured rent in full. We
+estimate the durable share at $\rho=0.60$ (60\% efficiency recapture, 40\% competition
+reduction):
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r l}
+\toprule
+\textbf{Projected synergy} & \textbf{\$M} & \textbf{Character} \\
+\midrule
+Efficiency recaptured \;($\rho=0.60$)            & 36 & \durable{} --- sticks \\
+Competition-reduction rent \;($1-\rho=0.40$)     & 24 & \fragile{} --- reverts \\
+\midrule
+\textbf{Captured synergy} & \textbf{60} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{\$36M durable; \$24M fragile.} Price the platform on the \$36M.
+
+% ======================================================================
+\section{Check 2 --- The entry floor (how far you can hold it)}
+% ======================================================================
+
+\subsection{The mechanics (Salop)}
+A differentiated market with circular product space of differentiation $t$ and entry cost $f$
+has equilibrium per-firm markup and free-entry count
+\[
+  \mu(n)=\frac{t}{n},\qquad
+  n^{*}=\sqrt{t/f},\qquad
+  \mu(n^{*})=\sqrt{tf}\ \ (\text{the entry-proof markup}),\qquad
+  \text{durable HHI}=\frac{1}{n^{*}}=\sqrt{f/t}.
+\]
+Markup rises as players fall ($\mu=t/n$), and a merger lifts it by $\Delta\mu=t/(J(J-1))$. But
+$n^{*}$ is the level entry restores: consolidating \emph{below} $n^{*}$ pushes markup above
+$\sqrt{tf}$, and that excess is \fragile{} --- it draws entry back to $n^{*}$.
+
+\subsection{Worked example}
+With differentiation $t=\$20\text{M}$ and entry cost $f=\$1.25\text{M}$:
+\[
+  n^{*}=\sqrt{20/1.25}=\sqrt{16}=4\ \text{players},\quad
+  \mu(n^{*})=\sqrt{20\cdot1.25}=\$5\text{M},\quad
+  \text{durable HHI}=1/4=0.25 .
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Consolidation step} & \textbf{Character} \\
+\midrule
+$6\to4$ players & \durable{} --- down to the natural floor $n^{*}=4$ \\
+$4\to3$ players & \fragile{} --- below $n^{*}$; entry restores $\sim$4 and competes the gain away \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{note}
+\textbf{The two checks are complementary, never added.} Check 1 sizes the fragile rent in
+dollars (\$24M, via $\rho$); Check 2 locates it in the deal sequence (the $4\to3$ step, via
+the floor). They are different lenses on the same fragile rent --- one in \$, one in deal
+count --- and are \emph{not} summed. (Converting Check 2's per-unit markup into total dollars
+would need a volume input, which is why they stay separate.)
+\end{note}
+
+% ======================================================================
+\section{``How far should we consolidate?'' --- and why there is no forced optimum}
+% ======================================================================
+Netting the recaptured efficiency against the destroyed variety gives the per-merger value
+(in the curvature metric)
+\[
+  \frac{\rho}{J(J-1)}-\frac{1-\rho}{J(J-1)}=\frac{2\rho-1}{J(J-1)},
+  \qquad\text{cumulative }J\to n:\ (2\rho-1)\,\Delta\text{HHI}.
+\]
+The sign is fixed by $(2\rho-1)$ and the magnitude \emph{grows} as $J\to2$ --- increasing
+returns, not diminishing. So the geometry alone gives a \textbf{corner solution}: consolidate
+fully if $\rho>\tfrac12$, not at all if $\rho<\tfrac12$. \emph{There is no interior ``optimal
+number of acquisitions'' in the math.} An interior stopping point appears only when you
+\textbf{feed} a rising cost --- antitrust hazard or integration dis-synergy --- or impose the
+entry floor of Check 2. The defensible recommendation is therefore the \emph{durable ceiling}
+($n^{*}$), not a profit-maximizing $k$: in the example, $\rho=0.6>\tfrac12$ says ``keep going''
+on pure rent, but the floor says everything below 4 players is fragile, so 4 is the durable
+stopping point and the $4\to3$ deal buys rent that reverts.
+
+% ======================================================================
+\section{Judgment checkpoints (forced vs.\ fed)}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{p{6.4cm} p{6.4cm}}
+\toprule
+\textbf{Forced by the algebra} & \textbf{Fed by you (state as assumptions)} \\
+\midrule
+The rent identity $1/J+D+K=1$; merger curvature loss $(1-\rho)/(J(J-1))$; HHI $=1/J+$ dispersion.
+& $\rho$, the substitutes-vs-complements regime (drives the entire split). \\
+Salop markup $t/n$; free-entry $n^{*}=\sqrt{t/f}$, markup $\sqrt{tf}$. & Differentiation $t$ and entry cost $f$ (locate the floor). \\
+Capture-not-creation (the conserved total). & A price $w$ to put \$ on destroyed variety; the bridge that one market is both $\rho$- and $t$-shaped. \\
+Net per-merger value $(2\rho-1)/(J(J-1))$. & Antitrust thresholds, integration cost (to get an interior $k$); the reversion \emph{timeline}. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Out of scope entirely:} the \emph{speed} of reversion. The test gives the durable
+\emph{level} (a comparative-static fixed point), never how fast entry competes the fragile
+rent away --- flag it as a judgment, never invent a number.
+
+% ======================================================================
+\section{Why it works (self-contained)}
+% ======================================================================
+Each step has an elementary reason --- a normalized partition, one line of algebra, and the
+textbook free-entry condition. Nothing reaches beyond that.
+\begin{itemize}
+  \item \textbf{The rent decomposition is bookkeeping on a normalized total.} Set total market
+  rent to $1$. With $J$ equal competitors the symmetric floor is $1/J$; the rest, $(J-1)/J$, is
+  contested. Let $\rho$ be the fraction of that contested rent which is wasteful competition
+  (recoverable) and $(1-\rho)$ the fraction protected by differentiation. The three pieces sum to
+  $1$ by construction --- it's a partition, not an assumption. ($\rho$ is the one input you
+  estimate.)
+  \item \textbf{The merger move is one line.} $\Delta(1/J)=\tfrac{1}{J-1}-\tfrac1J=\tfrac{1}{J(J-1)}$
+  shifts into the protected baseline, of which $\rho$ is durable (recovered waste) and $(1-\rho)$
+  is fragile (lost variety). Net per merger $=\tfrac{2\rho-1}{J(J-1)}$ --- positive iff
+  $\rho>\tfrac12$.
+  \item \textbf{The entry floor is the free-entry condition.} In the standard circular-market
+  model each firm's markup is $t/n$ and it serves $1/n$ of the market, so per-firm operating
+  profit is $\tfrac{t}{n}\cdot\tfrac1n=\tfrac{t}{n^2}$. Free entry drives that to the entry cost
+  $f$: $\tfrac{t}{n^2}=f\Rightarrow n^{*}=\sqrt{t/f}$, with entry-proof markup $t/n^{*}=\sqrt{tf}$
+  and durable concentration $1/n^{*}=\sqrt{f/t}$. Four lines, standard IO.
+\end{itemize}
+\textbf{What's exact is the split and the floor formula; the inputs} ($\rho$, $t$, $f$)
+\textbf{are judgment, and there is no ``optimal $k$''} --- the geometry gives a corner, so an
+interior stop needs a fed cost (antitrust / integration). Present it as ``exact and
+transparent,'' never as an external proof.
+
+\vspace{6pt}\hrule\vspace{5pt}
+{\footnotesize\itshape Companion to ``The Synergy Reality Test'' and to the Value-Creation
+Bridge guide. Draft prepared by the ENT 105 team for Creo Advisors. Figures are illustrative
+and reconcile with the one-pager. The rent split and the entry floor are grounded in
+conservation-based accounting; $\rho$, $t$, $f$,
+antitrust thresholds, and the reversion timeline are client-specific inputs set at scoping.}
+
+\end{document}

@@ -1,0 +1,304 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  The Value-Creation Bridge — Practitioner's Guide (methods companion)
+%  The "show me how" document behind value-creation-bridge.tex.
+%  Draft prepared by the ENT 105 team for Creo Advisors.
+%  Compile: pdflatex value-creation-bridge-guide.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{note}{colback=creoaccent!7,colframe=creoaccent,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+\newtcolorbox{judgment}{colback=orange!7,colframe=orange!75!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+
+\newcommand{\created}{\textcolor{creoaccent}{\textbf{Created}}}
+\newcommand{\transferred}{\textcolor{gray!55!black}{\textbf{Transferred}}}
+
+\title{\textbf{\color{creonavy} The Value-Creation Bridge --- Practitioner's Guide}\\[3pt]
+\large How to run the analysis: data, formulas, classification rules, worked end-to-end}
+\author{\normalsize Methods companion to the one-pager --- for analysts \textbf{(internal)}}
+\date{\normalsize 2 June 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{note}
+\textbf{What this is.} The one-pager \emph{sells} the Value-Creation Bridge; this guide
+\emph{runs} it. It is the document you reach for when a client (or a skeptical colleague)
+says ``show me how the numbers are actually built.'' It gives the data, the exact formulas,
+the classification decision-rules, and a single worked example carried through end to end ---
+the same deal as the one-pager, so the figures reconcile.
+\end{note}
+
+\tableofcontents
+\vspace{0.6em}\hrule\vspace{0.8em}
+
+% ======================================================================
+\section{The principle and the two splits}
+% ======================================================================
+One rule governs everything: \textbf{the bridge must reconcile to the realized equity gain
+to the dollar.} Value is conserved --- every dollar of gain is either value the business
+\emph{created} or value \emph{transferred} across a boundary, and within the created pool
+every dollar traces to one operating lever. Nothing is left in an ``interaction'' or
+``other'' line. The analysis has two splits:
+
+\begin{enumerate}
+  \item \textbf{Split 1 --- Created vs.\ Transferred.} Decompose the equity gain into
+  operational value created versus value transferred in (multiple re-rating, deleveraging,
+  tax, timing).
+  \item \textbf{Split 2 --- Attribution within Created.} Decompose the created pool across
+  \textbf{pricing}, \textbf{volume}, and \textbf{cost productivity}, residual-free.
+\end{enumerate}
+
+% ======================================================================
+\section{Step 0 --- Define the system boundary}
+% ======================================================================
+Before any arithmetic, name the counterparties, because ``transfer'' means \emph{across this
+boundary}: the company, its \textbf{lenders}, the \textbf{tax authority}, the \textbf{prior
+and next owners}, and \textbf{customers}. Value that grows the whole system is created; value
+that only moves between these parties is transferred. \emph{This choice is an input --- state
+it.}
+
+% ======================================================================
+\section{Split 1 --- Created vs.\ Transferred}
+% ======================================================================
+
+\subsection{Data required}
+Entry and exit \textbf{EBITDA} ($E_0,E_1$), \textbf{EV/EBITDA multiple} ($m_0,m_1$), and
+\textbf{net debt} ($D_0,D_1$). Equity value is $\text{Equity}=E\cdot m-D$.
+
+\subsection{The bridge identity}
+The equity gain splits as
+\[
+\Delta\text{Equity}=\underbrace{\Delta\text{EV}}_{E_1m_1-E_0m_0}-\;\Delta D,
+\qquad
+\Delta\text{EV}=\underbrace{\Delta E\cdot m_0}_{\text{EBITDA growth}}
++\underbrace{\Delta m\cdot E_0}_{\text{re-rating}}
++\underbrace{\Delta E\cdot\Delta m}_{\text{interaction}} .
+\]
+The third term is the crux: a conventional bridge dumps it into a residual. \textbf{Do not.}
+Allocate it by a single, stated rule:
+
+\begin{itemize}
+  \item \textbf{Symmetric (Shapley --- canonical).} Split the interaction 50/50, which is
+  identical to valuing \emph{each driver at the average of the other}:
+  \[
+  \text{EBITDA growth}=\Delta E\cdot\bar m,\qquad
+  \text{re-rating}=\Delta m\cdot \bar E,\qquad
+  \bar m=\tfrac{m_0+m_1}{2},\ \bar E=\tfrac{E_0+E_1}{2}.
+  \]
+  This is the uniquely symmetric, residual-free allocation --- the rule the methodology rests on.
+  \item \textbf{Sequential (simpler).} Grow EBITDA at the entry multiple, then re-rate at exit
+  EBITDA: $\Delta E\cdot m_0$ and $\Delta m\cdot E_1$. Folds the interaction into re-rating.
+\end{itemize}
+Pick one, state it, and report both if the difference is material.
+
+\subsection{Classification rules (created vs.\ transferred)}
+\begin{itemize}
+  \item \created{} --- \textbf{EBITDA growth}: real operating improvement, valued at a
+  \emph{constant} multiple so growth is never conflated with re-rating.
+  \item \transferred{} --- \textbf{Multiple re-rating}: the market/next buyer paying a
+  different multiple. \emph{Default: transfer.}
+  \item \transferred{} --- \textbf{Deleveraging}: debt paydown shifting enterprise value from
+  the debt claim to the equity claim. \emph{Default: transfer} (enterprise value is unchanged
+  by the paydown itself).
+  \item \transferred{} --- \textbf{Tax shields, timing/market beta}: value from the state or
+  the cycle.
+\end{itemize}
+
+\begin{judgment}
+\textbf{Judgment calls --- decide and document.} (1) If a re-rating reflects genuine
+structural de-risking the company achieved (recurring revenue, lower customer concentration),
+a portion of multiple expansion may be reclassified as \created{} --- with justification.
+(2) The cash flow that \emph{funded} deleveraging is operational; a sponsor who credits that
+cash conversion to operations reclassifies the funded portion as \created{}. State the choice;
+the bridge updates.
+\end{judgment}
+
+\subsection{Worked example}
+$E_0{=}100,\ E_1{=}150$; $m_0{=}10.0,\ m_1{=}11.0$; $D_0{=}600,\ D_1{=}400$. Then
+$\text{Equity}_0{=}400$, $\text{Equity}_1{=}1{,}250$, gain $=\$850\text{M}$. Using the
+sequential convention (matching the one-pager):
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r l l}
+\toprule
+\textbf{Source} & \textbf{\$M} & \textbf{Formula} & \textbf{Bucket} \\
+\midrule
+EBITDA growth      & 500 & $\Delta E\cdot m_0=50\times10$ & \created \\
+Multiple re-rating & 150 & $\Delta m\cdot E_1=1\times150$ & \transferred \\
+Deleveraging       & 200 & $-\Delta D=600-400$           & \transferred \\
+\midrule
+\textbf{Equity gain} & \textbf{850} & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Created \$500M (59\%); transferred \$350M (41\%).} The ``created MOIC'': value exit
+EBITDA at the \emph{entry} multiple on the \emph{entry} balance sheet,
+$E_1 m_0-D_0=1{,}500-600=\$900\text{M}$, so $900/400=\textbf{2.25}\times$ --- and
+$900-400=\$500\text{M}$, the created pool. The headline $3.1\times$ is a $2.25\times$ of
+created value wrapped in financial engineering.
+
+\begin{note}
+\textbf{Convention check (robustness).} The symmetric/Shapley rule gives EBITDA growth
+$\Delta E\cdot\bar m=50\times10.5=\$525\text{M}$ and re-rating $\Delta m\cdot\bar
+E=1\times125=\$125\text{M}$ --- so created $=\$525\text{M}$ ($62\%$). The two conventions differ
+by \$25M ($\sim$3 points); the conclusion --- ``well under two-thirds was created'' --- is
+robust to the choice. Report the convention you used.
+\end{note}
+
+% ======================================================================
+\section{Split 2 --- Attribution within Created}
+% ======================================================================
+
+\subsection{Data required --- and the deflator step}
+EBITDA factors as $E=P\cdot Q\cdot \mu$ --- \textbf{price index} $\times$ \textbf{volume
+index} $\times$ \textbf{margin}. Revenue $=P\cdot Q$; margin $\mu=E/\text{Revenue}$. To
+separate price from volume you need a \textbf{realized net price index} $P$ (list price
+changes net of discounts, revenue-weighted across lines); then volume $Q=\text{Revenue}/P$.
+\emph{The deflator is an input --- state its source.}
+
+\subsection{The decomposition (log / Divisia --- residual-free)}
+Because $E=P\cdot Q\cdot\mu$ is a product, logs add exactly:
+\[
+\Delta\ln E=\Delta\ln P+\Delta\ln Q+\Delta\ln\mu .
+\]
+Each lever's share of the created value is its share of log-growth:
+\[
+\text{contribution}_i=\frac{\Delta\ln(\text{factor}_i)}{\Delta\ln E}\times(\text{created value}).
+\]
+There is no cross-term: the shares sum to 1 by construction, so the dollars sum to the
+created pool with no residual.
+
+\subsection{The Aumann--Shapley alternative (levels, and ROIC)}
+When the structure is additive or you decompose a \emph{level} (e.g.\ ROIC $=$ margin
+$\times$ turns), use the symmetric line-integral: split each pairwise interaction 50/50 (a
+triple interaction $\tfrac13$ each). For ROIC: $\Delta\text{ROIC}=\Delta(\text{margin})\cdot
+\overline{\text{turns}}+\Delta(\text{turns})\cdot\overline{\text{margin}}$. This is the same
+``value each factor at the average of the others'' rule as Split 1, and it is path-independent
+--- the unique residual-free level attribution.
+
+\subsection{Worked example}
+Carrying the created \$500M. Revenue grew $500\to641$ ($+28.2\%$) and margin $20\%\to23.4\%$
+($+17.0\%$), so EBITDA $100\to150$ ($\times1.50$). The factors compound exactly:
+$1.080\times1.187\times1.170=1.50$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{l r r r}
+\toprule
+\textbf{Lever} & \textbf{Factor} & \textbf{$\Delta\ln$ / share} & \textbf{\$M} \\
+\midrule
+Pricing ($+8.0\%$)            & 1.080 & $0.0770$ \;/\; 19\% & 95 \\
+Volume ($+18.7\%$)            & 1.187 & $0.1714$ \;/\; 42\% & 211 \\
+Cost productivity ($+17.0\%$) & 1.170 & $0.1570$ \;/\; 39\% & 194 \\
+\midrule
+\textbf{Total} & $1.500$ & $0.4054$ \;/\; 100\% & \textbf{500} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Read:} volume and cost productivity did $\sim$80\% of the work; pricing only 19\% ---
+the under-exploited lever for the next hold.
+
+% ======================================================================
+\section{Reconciliation --- always close the loop}
+% ======================================================================
+The final check, every time: the buckets must sum back to the realized equity gain.
+\[
+\underbrace{(95+211+194)}_{\text{created }500}+\underbrace{150}_{\text{re-rating}}
++\underbrace{200}_{\text{deleveraging}}=\$850\text{M}=\Delta\text{Equity}.\ \checkmark
+\]
+If it does not tie to the dollar, a flow has been mis-mapped or double-counted --- find it
+before presenting.
+
+% ======================================================================
+\section{Judgment checkpoints (the inputs the math cannot supply)}
+% ======================================================================
+The arithmetic is exact; the \emph{answer} is only as good as four inputs, each of which must
+be stated as an assumption:
+\begin{enumerate}
+  \item \textbf{System boundary} --- who counts as a counterparty (Step 0).
+  \item \textbf{Classification} --- the created-vs-transferred calls, especially re-rating
+  (de-risking?) and deleveraging (credit the cash conversion?).
+  \item \textbf{Interaction convention} --- symmetric (canonical) or sequential.
+  \item \textbf{Deflator} --- the price index separating pricing from volume.
+\end{enumerate}
+Change any one and the bridge updates transparently. That is the methodology's discipline:
+the assumptions are visible and contestable, not buried.
+
+% ======================================================================
+\section{Why the decomposition works (self-contained)}
+% ======================================================================
+You don't have to take the exactness on faith --- each piece has an elementary reason, and none
+of it reaches beyond linear algebra, logs, and a path integral.
+\begin{itemize}
+  \item \textbf{Created $+$ transferred $=$ the whole, no overlap.} Write the per-stakeholder
+  value change as a vector $d$. Split it into its average component $\bar d\,\mathbf{1}$ (the same
+  for everyone --- this carries the change in the \emph{total}, so $\sum\text{created}=\sum d$) and
+  the remainder $d-\bar d\,\mathbf{1}$ (which sums to zero --- pure redistribution). The two are
+  orthogonal: $\langle \mathbf{1},\, d-\bar d\,\mathbf{1}\rangle=\sum_i (d_i-\bar d)=0$. Orthogonal
+  pieces obey Pythagoras, so $\lVert d\rVert^2=\lVert\text{created}\rVert^2+\lVert\text{transferred}\rVert^2$
+  --- there is \emph{no cross-term}. (It is the projection of $d$ onto the all-ones line and its
+  complement.)
+  \item \textbf{Why the lever split has no residual.} EBITDA $=$ price $\times$ volume $\times$
+  margin, so $\ln\text{EBITDA}=\ln p+\ln v+\ln m$ and the changes add \emph{exactly}:
+  $\Delta\ln\text{EBITDA}=\Delta\ln p+\Delta\ln v+\Delta\ln m$. The log of a product is a sum, so
+  no interaction term can survive --- the shares are exhaustive by construction.
+  \item \textbf{Why the symmetric split is exact \emph{and} canonical.} For a product,
+  $\Delta(xy)=\Delta x\,y_0+x_0\,\Delta y+\Delta x\,\Delta y$; splitting the interaction
+  $\Delta x\,\Delta y$ in half gives each factor its change valued at the \emph{average} of the
+  other, and the two add back to $\Delta(xy)$ exactly (expand and check). It is canonical because
+  it is the integral of the gradient along the straight path from start to finish --- the only
+  allocation that treats the factors identically (neither goes ``first''). For three factors the
+  same path integral produces the $\tfrac12$ / $\tfrac13$ weights, since $\int_0^1 s\,ds=\tfrac12$
+  and $\int_0^1 s^2\,ds=\tfrac13$; and a path integral from $a$ to $b$ equals $f(b)-f(a)$, which is
+  exactly why nothing is left over.
+  \item \textbf{Why deleveraging is a transfer.} Equity $=$ EV $-$ net debt; paying down debt with
+  the firm's cash leaves EV unchanged (you retire a liability with an asset), so the equity gain is
+  value moving from the debt claim to the equity claim within a fixed enterprise value --- a
+  transfer between claimholders, not new value. (The cash that funded it \emph{was} operational ---
+  the judgment call flagged in the assumptions.)
+\end{itemize}
+\textbf{What's exact is the arithmetic structure} --- the parts sum to the whole with no
+double-counting. \textbf{The four inputs} --- boundary, classification, interaction convention,
+deflator --- \textbf{remain judgment.} Present it as ``exact and transparent: check it on the
+page,'' never as an external proof.
+
+\vspace{6pt}\hrule\vspace{5pt}
+{\footnotesize\itshape Methods companion to ``The Value-Creation Bridge.'' Draft prepared by
+the ENT 105 team for Creo Advisors. Figures are illustrative and reconcile with the one-pager.
+The decomposition mechanics are grounded in conservation-based accounting; the boundary,
+classification, interaction convention, and deflator are client-specific inputs set at the
+engagement's scoping stage.}
+
+\end{document}

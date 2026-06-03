@@ -1,0 +1,346 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  Creo Advisors — AI Value-Creation Marketing Plan (ENT 105)
+%  Brand: "AI value is a map, not a multiplier."  The AI-Automatability
+%  Diagnostic as flagship lead magnet. Draft by the ENT 105 team for Creo.
+%  Compile: pdflatex creo-ai-marketing-plan.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\newtcolorbox{bigidea}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{callout}{colback=creoaccent!8,colframe=creoaccent,
+  boxrule=0.6pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt}
+\newtcolorbox{caution}{colback=orange!7,colframe=orange!75!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+
+\title{\textbf{\color{creonavy} Creo Advisors --- AI Value-Creation Marketing Plan}\\[3pt]
+\large ``AI value is a map, not a multiplier.''}
+\author{\normalsize Draft marketing plan prepared by the ENT 105 team for Creo Advisors}
+\date{\normalsize 2 June 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{bigidea}
+\textbf{The big idea.} Private equity's hottest play is the ``AI roll-up'' --- buy fragmented,
+labor-heavy services businesses and use AI to cut cost and expand margin. The hype says AI
+replaces labor wholesale (``1000:1''). The verified reality: most PE firms can't show an AI
+return at all. The truth in between is that \textbf{the AI handoff ratio is a \emph{map across
+functions}, not a single multiplier} --- a few coordination functions collapse at $\sim$10{,}000:1,
+the knowledge-work middle amplifies at $\sim$3:1, and frontline judgment work stays $\sim$1:1.
+\textbf{Creo's market is telling PE buyers which is which} --- so they don't overpay for the
+average, or gut the business chasing it. The lead product is the \textbf{AI-Automatability
+Diagnostic}: an independent, buyer-side read that generates qualified leads and reprices deals.
+\end{bigidea}
+
+\tableofcontents
+\vspace{0.5em}\hrule\vspace{0.7em}
+
+% ======================================================================
+\section{Objective}
+% ======================================================================
+Position Creo to win AI-value-creation mandates from PE sponsors and their portfolio companies,
+and to \textbf{generate qualified leads} for that work --- toward the 2027 revenue goal to be
+confirmed at the Discovery meeting. The mechanism: a free, rigorous \emph{AI-Automatability
+Diagnostic} that draws PE buyers in, qualifies them, and hands warm leads to the partners.
+
+% ======================================================================
+\section{The opportunity \& why now}
+% ======================================================================
+\begin{itemize}
+  \item \textbf{The AI roll-up is a real, funded 2024--26 wave.} Articulated by Elad Gil and
+  scaled by General Catalyst (Eudia/legal, Titan/IT, Long Lake --- which took Amex GBT private
+  for \$6.3B), Thrive Holdings (\$1B+, OpenAI-backed), Khosla, Lightspeed, and others, across
+  legal, accounting, IT/MSP, BPO/call centers, healthcare, and property management.
+  \item \textbf{But the results aren't there --- which is the opening.} BCG (2026): \emph{most PE
+  firms cannot show meaningful AI returns}; only \textbf{5\% of companies capture substantial
+  value while 60\% lag}. An MIT-linked study found \textbf{$\sim$95\% of enterprise GenAI pilots
+  fail}; Klarna publicly reversed its AI-only support push and began \emph{re-hiring humans}.
+  \item \textbf{So buyers are flying blind into the hottest strategy in PE.} They are pricing
+  deals on hype ratios with no rigorous way to tell what's real. That gap --- between the pitch
+  and the durable truth --- is the market Creo can own.
+\end{itemize}
+
+% ======================================================================
+\section{The core insight: the handoff ratio is a map}
+% ======================================================================
+The single idea the whole offering rests on, and the reason a rigorous diagnostic is worth
+paying for:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}\small
+\begin{tabular}{p{2.6cm} p{2.4cm} p{8.0cm}}
+\toprule
+\textbf{Function type} & \textbf{Handoff ratio} & \textbf{What it is} \\
+\midrule
+\textbf{Collapse} & $\sim$10{,}000:1 & Pure coordination / matching / information-routing --- the ``dispatcher.'' Near-total automation. \emph{Precedent: Uber/DoorDash replaced the human dispatch layer of an entire industry with one matching algorithm.} \\
+\textbf{Amplify} & $\sim$3:1 & Knowledge work where AI makes a skilled operator several times more effective (human still in the loop). \\
+\textbf{Level-up} & --- & Routine work where AI raises the floor / lifts the average performer. \\
+\textbf{Keep human} & $\sim$1:1 & Judgment, physical, relationship, trust, and regulated work --- not durably automatable (Uber still needs the drivers). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{callout}
+\textbf{Why this is the wedge.} The hype prices every function at $\sim$1000:1 and overpays. The
+skeptic prices everything at $\sim$3:1 and misses the rare 10{,}000:1 prize. \textbf{Both are
+wrong, because a business is a \emph{portfolio} of functions with wildly different ratios.} The
+value --- and the risk --- live in the mix, and almost no one measures it. Creo does.
+\end{callout}
+
+\emph{(Ratios are illustrative orders of magnitude; the real figures are function- and
+industry-specific --- which is precisely what the Diagnostic measures.)}
+
+\textbf{The second map: who can be re-selected.} The function map says \emph{what} could be
+automated; it doesn't say whether \emph{this} business can pull it off. The durable value comes
+from a workforce \textbf{swap, not a purge}: keep and amplify the operators who truly understand
+the business, collapse the pure-coordination layer, and trade non-adopters for AI-fluent talent
+--- without breaking quality. How large a swap a business can sustain is itself a ratio, specific
+to the company and its management. Microsoft is the public template: it cut 15{,}000+ in 2025
+while \emph{mandating} AI use and shielding its AI teams --- reselection toward AI-fluent talent,
+not 1000:1 replacement. \textbf{The tell:} when a company sheds thousands and rehires a sizable
+\emph{fraction} as AI adopters, that fraction is a readout of the real automation ratio ---
+amplification (low single digits), not replacement (1000:1).
+
+% ======================================================================
+\section{Competitive landscape \& the gap}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{p{3.2cm} p{5.0cm} p{4.4cm}}
+\toprule
+\textbf{Competitor} & \textbf{Position} & \textbf{Why a boutique can flank them} \\
+\midrule
+Bain & AI across the deal lifecycle; works with $\sim$80\% of the largest PE firms & Scaled, generalist, conflicted toward big-ticket transformation; not deal-level diligence-grade \\
+BCG & Branded ``deploy / reshape / invent'' methodology & Owns ``reshape'' --- so Creo differentiates elsewhere (independent, diligence-grade, the ratio map) \\
+EY / Big Four & AI as a ``differentiated'' PE value-creation service & Broad frameworks, self-reported credentials, sells the build (conflicted) \\
+In-house PE teams (e.g.\ Vista) & Mandating AI goals across portfolios & Internal, capacity-limited; a neutral outside read still adds rigor and credibility \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{The gap:} the top is crowded by generalists selling *broad frameworks* and *the build*.
+No one is clearly the **independent, buyer-side, diligence-grade** authority on \emph{which
+functions can durably be automated, at what ratio} --- the rigor-over-hype seat. That is where a
+focused boutique can be first.
+
+% ======================================================================
+\section{Positioning \& value proposition}
+% ======================================================================
+\textbf{Positioning.} \emph{Creo is the independent, buyer-side authority on what AI can actually
+do in a deal --- mapping the real automation ratio function by function, so sponsors capture the
+durable value and avoid the deals that blow up.}
+
+\textbf{Three reasons to believe (all defensible, none a novelty claim):}
+\begin{itemize}
+  \item \textbf{Independent.} Creo doesn't sell the AI systems --- so unlike the vendors and the
+  build-shops, its read isn't conflicted. In a market full of AI claims, that neutrality is the
+  scarce asset.
+  \item \textbf{Rigorous \& transparent.} Grounded in the established task-automation research
+  (Frey--Osborne's automation-resistant task classes; the ``exposure $\neq$ automation'' caveat
+  from the OpenAI/Science study) --- every call reconciles and is shown, not asserted.
+  \item \textbf{Amplify, don't gut.} The durable play is a \emph{swap, not a purge} --- keep and
+  amplify the operators who run the business, collapse only the busywork, and re-select for
+  AI-fluent talent; the gut-and-replace failure mode (deploy-and-fire) is exactly why most AI
+  programs show no return.
+\end{itemize}
+
+% ======================================================================
+\section{Target personas}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{p{2.7cm} p{4.6cm} p{5.2cm}}
+\toprule
+\textbf{Persona} & \textbf{Pain / trigger} & \textbf{Message} \\
+\midrule
+Deal Partner / MD \emph{(pre-deal)} & Underwriting an AI-rollup thesis; can't tell real from hype; IC scrutiny & ``Price on the real ratio, not the pitch --- before you overpay.'' \\
+Operating Partner \emph{(champion)} & Must show AI returns to LPs; portfolio pilots stalling & ``Most AI programs show no return. We map where the durable value actually is.'' \\
+Portfolio CEO \emph{(operator)} & Pressure to ``do AI''; fear of breaking the business & ``Amplify your best people and collapse the busywork --- without gutting what works.'' \\
+LP / IR \emph{(amplifier)} & Differentiating the fund's value-creation story & ``Back your AI story with diligence you can defend.'' \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{The flagship offer: the AI-Automatability Diagnostic}
+% ======================================================================
+A fast, independent assessment along \textbf{two axes}: (1) a \emph{function} map --- which of a
+target's functions fall into Collapse / Amplify / Level-up / Keep-human; and (2) a
+\emph{reselection} read --- whether the business has operators worth amplifying and management
+able to execute the swap (cull non-adopters, bring in AI-fluent talent) without breaking quality.
+Together they roll into a \textbf{blended, durable value estimate} and \textbf{what the deal is
+actually worth} --- versus the seller's headline.
+
+\textbf{Outputs:} the function-by-function ratio map; a \textbf{reselection-readiness} score
+(amplifiable talent $+$ management's capacity to run the swap); the ``real vs.\ hyped value''
+gap; the amplify/collapse/keep priorities; and the deals/functions to walk away from.
+
+\textbf{Offer \& pricing ladder} (free proof $\to$ recurring relationship):
+\begin{enumerate}
+  \item \textbf{Free:} a gated ``AI Reality Report'' and a complimentary mini-Diagnostic on one
+  target --- the lead magnet and the proof.
+  \item \textbf{Productized:} a fixed-fee full Diagnostic on a deal or a portfolio company.
+  \item \textbf{Engagement:} the value-creation/amplification roadmap built on the Diagnostic
+  (Creo orchestrates; vendors build).
+  \item \textbf{Recurring:} the trusted AI read across the sponsor's portfolio.
+\end{enumerate}
+
+\textbf{Closing the loop --- measured proof.} Post-deal, Creo verifies that the projected
+durable value was actually realized, using its value-creation measurement methodology (the
+Value-Creation Bridge) to separate real operational gains from value merely transferred. The
+Diagnostic's promise is held to account: diligence $\rightarrow$ amplification $\rightarrow$
+\emph{measured} result.
+
+% ======================================================================
+\section{Campaign \& go-to-market}
+% ======================================================================
+A boutique-scale \emph{report $\rightarrow$ amplify $\rightarrow$ engage $\rightarrow$ convert}
+engine:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{p{1.8cm} p{4.6cm} p{5.8cm}}
+\toprule
+\textbf{Stage} & \textbf{Asset} & \textbf{Mechanic} \\
+\midrule
+Anchor & \textbf{The AI Reality Report} (annual) & Creo's proprietary take on the real ratios + failure rates; gated $\Rightarrow$ leads \\
+Amplify & Founder-led LinkedIn + short pieces & Contrarian, evidence-based hooks (below); inbound/SEO \\
+Engage & ``Inside the Reality Report'' roundtable/webinar & Converts readers to conversations with target sponsors \\
+Convert & Complimentary mini-Diagnostic & The qualified-lead handoff to the partners \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Signature content hooks} (contrarian = attention + credibility):
+\begin{itemize}
+  \item \emph{``AI value is a map, not a multiplier''} --- the function-ratio thesis.
+  \item \emph{``The 10{,}000:1 function hiding in your target''} --- find the coordination layer.
+  \item \emph{``The AI layoffs aren't what they look like''} --- Microsoft cut 15{,}000+ in 2025
+  while \emph{mandating} AI use (tied to performance reviews) and shielding its own AI teams from
+  the freeze: reselection toward AI-fluent talent, not 1000:1 replacement.
+  \item \emph{``The rehire is the tell''} --- when a giant lays off thousands and quietly rehires
+  a sizable share as AI adopters, that fraction \emph{is} the real automation ratio.
+  \item \emph{``95\% of AI pilots fail. Here's the 5\%.''}
+\end{itemize}
+
+\textbf{Channels \& tools:} LinkedIn (primary, founder-led); email nurture and CRM in
+\textbf{HubSpot} (inbound stack); SEO around ``AI value creation / AI due diligence''; small
+sponsor-targeted events; a fast, crawlable site with a real lead-capture CTA. Selective
+\textbf{outbound} via warm sponsor introductions and PE-forum speaking.
+
+% ======================================================================
+\section{Research plan (primary \& secondary)}
+% ======================================================================
+\textbf{Secondary} (done / ongoing): the AI-rollup deal landscape, the competitive field, the
+automation-research lineage, and the failure-rate evidence (see Evidence base). \textbf{Primary}
+(to run): short interviews/surveys with 5--10 PE operating and deal partners on (a) their
+AI-rollup intentions, (b) where their pilots stall, and (c) what they'd pay to de-risk --- to
+validate the personas, the pain, and the willingness-to-pay before the final plan.
+
+% ======================================================================
+\section{Budget (illustrative, annual --- boutique scale)}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\small
+\begin{tabular}{p{7.6cm} r}
+\toprule
+\textbf{Line item} & \textbf{Illustrative \$} \\
+\midrule
+Annual AI Reality Report (research, analysis, design, PR) & 25{,}000--40{,}000 \\
+Website (crawlable, lead capture, case examples) & 10{,}000--20{,}000 \\
+HubSpot (marketing + CRM) + nurture & 6{,}000--12{,}000 / yr \\
+LinkedIn / content production & 12{,}000--24{,}000 / yr \\
+Roundtables / events (2--3 / yr) & 10{,}000--20{,}000 \\
+\midrule
+\textbf{Total cash (ex.\ partner time)} & \textbf{$\sim$\$65{,}000--115{,}000 / yr} \\
+\bottomrule
+\end{tabular}
+\end{center}
+Most leverage is partner \emph{time} (the report's point of view, LinkedIn, roundtables), not
+cash --- the right shape for a boutique. Figures illustrative.
+
+% ======================================================================
+\section{KPIs}
+% ======================================================================
+\textbf{Awareness:} report downloads; LinkedIn growth/engagement; organic traffic.
+\textbf{Interest:} MQLs; webinar/roundtable attendance. \textbf{Intent:} mini-Diagnostic
+requests \emph{(key leading indicator)}. \textbf{Conversion:} qualified opportunities;
+diagnostics $\rightarrow$ paid engagements; revenue. \textbf{Efficiency:} \textbf{CAC} and
+\textbf{LTV} (and LTV:CAC) --- the boutique's North-Star unit economics.
+
+% ======================================================================
+\section{12-month phasing \& course milestones}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\small
+\begin{tabular}{p{1.5cm} p{7.6cm} p{3.4cm}}
+\toprule
+\textbf{Quarter} & \textbf{Focus} & \textbf{Course tie-in} \\
+\midrule
+Q1 & Foundations: site + capture, HubSpot, personas/messaging, run the report survey & Discovery / Wk-4 presentation \\
+Q2 & Launch the AI Reality Report + founder LinkedIn cadence & Mid-term draft \\
+Q3 & Roundtable + outbound + complimentary Diagnostics & HBS case lessons applied \\
+Q4 & Convert diagnostics to engagements; report CAC/LTV; scope Year 2 & Wk-13 final (mgmt) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Evidence base (cited)}
+% ======================================================================
+\footnotesize
+\begin{itemize}
+  \item AI-rollup thesis (Gil) --- TechCrunch, Jun 2025. \,/\, GC \& Long Lake--Amex GBT \$6.3B --- PitchBook \& BusinessWire, 2026. \,/\, Thrive Holdings / OpenAI stake --- Newcomer; Bloomberg.
+  \item Most PE can't show AI returns; 5\% / 60\%; deploy vs.\ reshape --- BCG, ``Inside the AI-First Private Equity Firm,'' 2026; ``The Widening AI Value Gap.''
+  \item $\sim$95\% of GenAI pilots fail --- MIT (via Fortune, Aug 2025). \,/\, Klarna re-hiring --- Entrepreneur, 2025.
+  \item Microsoft 2025: $>$15{,}000 roles cut (May $\sim$6{,}000 + July $\sim$9{,}000) --- CNBC, Jul 2025; plus a $\sim$7\% US voluntary-buyout offer --- HCAmag, 2026. AI use made ``no longer optional'' and tied to performance reviews (Liuson memo) --- Business Today / HR Grapevine, Jun 2025. AI/Copilot teams shielded from the 2026 hiring freeze --- CNBC, Apr 2026.
+  \item Automation-resistant task classes; 47\% high-risk (not a forecast) --- Frey \& Osborne (2013). \,/\, ``exposure $\neq$ automation''; $\sim$80\% of workers, $\geq$10\% of tasks LLM-exposed --- OpenAI ``GPTs are GPTs'' (Science, 2024).
+  \item Incumbents --- Bain (industry/PE pages, $\sim$80\% of largest PE); EY (PE value-creation); Vista (Rule-of-60, 85+ portcos via Bain PE Report).
+\end{itemize}
+
+\begin{caution}
+\textbf{Honest caveats (this is a rigor-over-hype brand --- it must hold itself to it).}
+The illustrative ratios (10{,}000:1, 3:1, 1000:1) are orders-of-magnitude, not constants ---
+the real figures are what the Diagnostic measures. Vendor/survey market figures (Bain's
+``80\%,'' EY allocations) are self-reported --- attribute, don't assert. The ``Uber/DoorDash''
+point is used as factual \emph{precedent} (dispatch-layer automation), not a borrowed thesis.
+The Microsoft case is now verified and sourced (the 2025 cuts and the ``AI is no longer
+optional'' performance-review memo); the content rests on those documented facts and frames it as
+reselection-for-amplification, without overstating cause. The ``white space'' is a defensible
+read, not a proven vacancy --- the
+incumbents are strong; Creo wins on focus, independence, and credibility, not scale.
+\end{caution}
+
+\vspace{4pt}\hrule\vspace{4pt}
+{\footnotesize\itshape Draft marketing plan prepared by the ENT 105 team for Creo Advisors.
+Figures and timelines illustrative, to be finalized with management. All analyses are
+independent and transparent --- credibility is shown, not claimed.}
+
+\end{document}
