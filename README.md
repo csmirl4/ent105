@@ -23,21 +23,22 @@ Each document is provided as both LaTeX source (`.tex`) and a compiled `.pdf`.
 
 | Document | What it is |
 | --- | --- |
-| **`creo-ai-marketing-plan`** | The core deliverable — the AI value-creation marketing plan ("a map, not a multiplier"; the AI-Automatability Diagnostic; positioning, personas, campaign, budget, KPIs). |
-| **`creo-marketing-collateral`** | Ready-to-use sample assets: positioning statement, messaging house, taglines, product/sell-sheet description, lead-magnet copy, website hero, sample LinkedIn posts, and a nurture email. |
-| **`discovery-meeting-questions`** | A structured question list for the client discovery meeting — locking the objective and testing appetite for the AI direction. |
-| **`creo-advisors-market-analysis`** | A market, competitive, and strategic analysis (deep, cited, adversarially-verified research): the competitive landscape, credence-good economics, 2026 demand data, and competitor go-to-market playbooks. |
-| **`ideal-boutique-benchmark`** | A normative "ideal PE value-creation boutique" archetype, and a benchmark of Creo against it — turning the gaps into a roadmap of opportunities. |
-| **`value-creation-bridge`** (+ `-guide`) | A value-creation measurement methodology that separates real operational value *created* from value merely *transferred* — one-pager plus a practitioner's guide. |
-| **`synergy-reality-test`** (+ `-guide`) | A roll-up methodology that splits projected synergy into *durable* vs. *fragile* — one-pager plus guide. |
-| **`presentation-prep`** | The team's run-of-show, speaker split, reveal discipline, and Q&A playbook for the final presentation. |
-| **`ENT 105 … Syllabus … .pdf`** | The course syllabus, for reference. |
+| **[`creo-ai-marketing-plan`](creo-ai-marketing-plan.pdf)** ([source](creo-ai-marketing-plan.tex)) | The core deliverable — the AI value-creation marketing plan ("a map, not a multiplier"; the AI-Automatability Diagnostic; positioning, personas, campaign, budget, KPIs). |
+| **[`creo-marketing-collateral`](creo-marketing-collateral.pdf)** ([source](creo-marketing-collateral.tex)) | Ready-to-use sample assets: positioning statement, messaging house, taglines, product/sell-sheet description, lead-magnet copy, website hero, sample LinkedIn posts, and a nurture email. |
+| **[`discovery-meeting-questions`](discovery-meeting-questions.pdf)** ([source](discovery-meeting-questions.tex)) | A structured question list for the client discovery meeting — locking the objective and testing appetite for the AI direction. |
+| **[`creo-advisors-market-analysis`](creo-advisors-market-analysis.pdf)** ([source](creo-advisors-market-analysis.tex)) | A market, competitive, and strategic analysis (deep, cited, adversarially-verified research): the competitive landscape, credence-good economics, 2026 demand data, and competitor go-to-market playbooks. |
+| **[`ideal-boutique-benchmark`](ideal-boutique-benchmark.pdf)** ([source](ideal-boutique-benchmark.tex)) | A normative "ideal PE value-creation boutique" archetype, and a benchmark of Creo against it — turning the gaps into a roadmap of opportunities. |
+| **[`value-creation-bridge`](value-creation-bridge.pdf)** (+ [`-guide`](value-creation-bridge-guide.pdf)) ([source](value-creation-bridge.tex), [guide source](value-creation-bridge-guide.tex)) | A value-creation measurement methodology that separates real operational value *created* from value merely *transferred* — one-pager plus a practitioner's guide. |
+| **[`synergy-reality-test`](synergy-reality-test.pdf)** (+ [`-guide`](synergy-reality-test-guide.pdf)) ([source](synergy-reality-test.tex), [guide source](synergy-reality-test-guide.tex)) | A roll-up methodology that splits projected synergy into *durable* vs. *fragile* — one-pager plus guide. |
+| **[`presentation-prep`](presentation-prep.pdf)** ([source](presentation-prep.tex)) | The team's run-of-show, speaker split, reveal discipline, and Q&A playbook for the final presentation. |
+| **[`ENT 105 … Syllabus … .pdf`](<ENT 105 Marketing Fall Syllabus 1.0  05242026.pdf>)** | The course syllabus, for reference. |
 
 ## Where to start
 
-1. **`creo-ai-marketing-plan`** — the plan itself.
-2. **`creo-marketing-collateral`** — what the plan looks like as real marketing copy.
-3. **`creo-advisors-market-analysis`** and **`ideal-boutique-benchmark`** — the research and
+1. **[`creo-ai-marketing-plan`](creo-ai-marketing-plan.pdf)** — the plan itself.
+2. **[`creo-marketing-collateral`](creo-marketing-collateral.pdf)** — what the plan looks like as real marketing copy.
+3. **[`creo-advisors-market-analysis`](creo-advisors-market-analysis.pdf)** and
+   **[`ideal-boutique-benchmark`](ideal-boutique-benchmark.pdf)** — the research and
    strategy behind the plan.
 4. The methodology one-pagers and the presentation prep round out the package.
 
