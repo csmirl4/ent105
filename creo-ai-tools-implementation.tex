@@ -1,0 +1,487 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  Creo Advisors — AI Tools Implementation Plan (ENT 105)
+%  Expands slide 11 ("AI tools") into work breakdown, tool stack,
+%  effort/time estimates, and answers "where does the AI that writes
+%  the customized email actually come from?"
+%  Compile: pdflatex creo-ai-tools-implementation.tex  (run twice for ToC)
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\definecolor{creonavy}{RGB}{17,38,73}
+\definecolor{creoaccent}{RGB}{27,94,140}
+\definecolor{creocyan}{RGB}{30,180,225}
+
+\titleformat{\section}{\large\bfseries\color{creonavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{creonavy!85!black}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .3ex}{0.7ex}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=2.5pt}
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=3pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\newtcolorbox{bigidea}{colback=creonavy!6,colframe=creonavy,
+  boxrule=0.8pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newtcolorbox{callout}{colback=creoaccent!8,colframe=creoaccent,
+  boxrule=0.6pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt}
+\newtcolorbox{caution}{colback=orange!7,colframe=orange!75!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+\newtcolorbox{courseangle}{colback=green!5,colframe=green!45!black,
+  boxrule=0.5pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt}
+
+\newcommand{\hrs}[1]{\textbf{#1\,h}}
+\newcommand{\verify}{\textcolor{orange!80!black}{\textsuperscript{\textbf{[confirm]}}}}
+
+\title{\textbf{\color{creonavy} Creo Advisors --- AI Tools Implementation Plan}\\[3pt]
+\large Turning slide 11 into a buildable system: work, tools, time, cost}
+\author{\normalsize Prepared by the ENT 105 team for Creo Advisors}
+\date{\normalsize 14 October 2026 --- input to the final setup proposal due 2 December 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{bigidea}
+\textbf{Bottom line.} Slide 11 names five tools but not the plumbing between them --- and in
+particular it never says \emph{where the AI that writes each customized email actually runs}.
+HubSpot does not contain Claude; it has its own built-in assistant (Breeze), which cannot be
+trained on Rich's voice the way a Claude skill can. So the personalization row needs an
+explicit bridge. We recommend building it in two stages: \textbf{(1)~a human-in-the-loop
+setup} --- Rich (or an assistant) uses the Claude app with a saved \emph{``Rich's voice''}
+skill and the HubSpot connector to draft emails in batches, review them, and push them back
+into HubSpot; then, once the voice is proven, \textbf{(2)~a small automated pipeline} --- a
+script that calls the Claude API for each contact and writes the draft into a HubSpot contact
+field that a HubSpot sequence sends. Total build effort is roughly \textbf{125--195 hours over
+7--10 weeks}, plus about \textbf{12--19 hours of Rich's own time}. Running on \textbf{HubSpot Starter},
+with the Claude script doing the automation that HubSpot Professional would otherwise sell, keeps
+year-one platform cost under about \$1{,}000 instead of about \$13{,}000 (\S\ref{sec:platform}).
+The AI itself costs \textbf{tens of dollars a month}; SourceScrub is the remaining big license.
+\end{bigidea}
+
+\tableofcontents
+\vspace{0.5em}\hrule\vspace{0.7em}
+
+% ======================================================================
+\section{The key question: where does the email-writing AI come from?}
+% ======================================================================
+The slide says ``Claude for personalization \ldots\ plugs into HubSpot and email.'' Nothing
+plugs in by default. There are three realistic ways to make that happen. They differ in who
+presses the button, what it costs, and how much engineering is needed.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{L{2.6cm} L{4.3cm} L{3.6cm} L{3.6cm}}
+\toprule
+\textbf{Option} & \textbf{How it works} & \textbf{Pros} & \textbf{Cons} \\
+\midrule
+\textbf{A. HubSpot Breeze} (HubSpot's built-in AI) &
+HubSpot's own AI writing assistant, used inside the email editor and in sequences. &
+Zero integration work; already in the HubSpot UI. &
+Not Claude; it can't load Rich's voice skill or content bank. Output tends to sound generic
+--- the exact drift problem Creo already saw. \\
+\addlinespace
+\textbf{B. Claude app + skill + HubSpot connector} \emph{(recommended start)} &
+A Claude Team/Pro account holds a ``Rich's voice'' \emph{skill} and a Project with his content
+bank. The user connects HubSpot, asks Claude to pull a list (e.g.\ ``ACG Boston attendees,
+persona = Operating Partner''), drafts one email per contact, reviews them, and saves them back
+as HubSpot drafts, tasks, or notes. &
+Uses Claude and the voice skill directly; no code; a human reviews every send; live in about
+2 weeks. &
+Someone has to run it (about 30--60 min per batch); throughput tops out around 50--150 contacts
+per session. \\
+\addlinespace
+\textbf{C. Claude API pipeline} \emph{(scale stage)} &
+A small script, scheduled or run on demand, reads contacts from the HubSpot API, sends each one
+plus the voice skill to the Claude API, and writes the draft into a custom contact property
+(\texttt{ai\_email\_body}). A HubSpot sequence or workflow inserts that property as a
+personalization token and sends it. &
+Fully automated at any volume; cheap per email; keeps HubSpot as the system of record. &
+Needs a developer for about 35--55 h and an API key; a review step must be designed in; the
+script has to be maintained. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{callout}
+\textbf{Recommendation.} Start with \textbf{Option B} so Rich can approve the voice on real
+emails. Graduate to \textbf{Option C} once roughly 90\% of drafts go out with light or no
+edits. Use \textbf{Option A} (Breeze) only for small things like subject-line suggestions.
+Throughout, the \emph{same} voice skill is the single source of truth: the Claude app loads it
+directly, and the API pipeline sends the same text as its system prompt.
+\end{callout}
+
+\subsection{What ``Claude Code + skills'' should mean on the slide}
+Claude Code is a developer tool that runs in a terminal. Rich will not use it day to day. The
+\emph{skills} it refers to are also available in the regular Claude desktop and web apps on
+paid plans, and that is where Rich and his assistant will use them. Claude Code is
+what the \emph{implementer} uses to write the skill files, build the Option~C script, and
+automate reporting. We suggest the slide row read \emph{``Claude + skills (built with Claude
+Code).''}
+
+\subsection{The data flow, end to end}
+\begin{center}
+\small
+\fbox{\parbox{0.92\linewidth}{\centering
+\textbf{SourceScrub / ACG list} $\rightarrow$ CSV import $\rightarrow$
+\textbf{HubSpot} (contact + persona + sector + company + event tag)\\[3pt]
+$\downarrow$\\[1pt]
+\textbf{Claude} (voice skill + content bank + contact record) $\rightarrow$ draft email /
+LinkedIn note\\[3pt]
+$\downarrow$\\[1pt]
+\textbf{Human review} (Rich or assistant) $\rightarrow$ \textbf{HubSpot sequence / marketing
+email} sends from Rich's mailbox\\[3pt]
+$\downarrow$\\[1pt]
+Opens, clicks, replies, meetings logged in \textbf{HubSpot} $\rightarrow$ \textbf{Claude for
+analysis} (weekly summary by persona) $\rightarrow$ next post or next email}}
+\end{center}
+LinkedIn \emph{messages} cannot be automated through any legitimate API, so Claude drafts them
+and a person sends them by hand. LinkedIn \emph{posts} can be scheduled through HubSpot's social
+tool or LinkedIn's own scheduler.
+
+% ======================================================================
+\section{Tool stack}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.25}\small
+\begin{tabular}{L{3.4cm} L{5.6cm} L{4.6cm}}
+\toprule
+\textbf{Tool} & \textbf{Role} & \textbf{Tier / notes} \\
+\midrule
+\textbf{Claude app} (Team or Pro) & Voice skill, content-bank Project, HubSpot connector,
+batch drafting, weekly analysis & Team plan if 2+ users need to share the skill and Project \\
+\textbf{Claude API} & Option C pipeline; weekly reporting job &
+Pay per use; Claude Opus 5.5 by default (Sonnet 5.5 if cost ever matters); Batch API halves the
+cost for overnight runs \\
+\textbf{Claude Code} & Implementer's tool to write skills, the sync script, and the reports &
+Developer use only \\
+\textbf{HubSpot Starter Customer Platform} & CRM, contacts, newsletter, marketing email,
+sequences sent from Rich's own inbox, tracking, dashboards & \textbf{Recommended tier}, about
+\$15--20 per seat per month; 2 seats (Rich + assistant). Upgrade to Professional only if volume
+outgrows the script (\S\ref{sec:platform})\verify \\
+\textbf{LinkedIn native scheduler} & Schedule Rich's posts & Free; replaces HubSpot
+Professional's social publishing \\
+\textbf{SourceScrub} & Conference and firm database; pre-ACG target lists & Annual enterprise
+contract, quote-based\verify. Confirm it covers \emph{attendee} lists for ACG events, not only
+sponsors and exhibitors \\
+\textbf{Email domain (DNS)} & SPF, DKIM, DMARC so HubSpot sends land in the inbox & One-time
+setup; required before any volume \\
+\textbf{Small host for the script} & Runs the Option C script (GitHub Actions, a cloud
+function, or a laptop cron job) & About \$0--10/month \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Work breakdown by workstream}
+% ======================================================================
+Hours are for the implementer (a student team member, a contractor, or Creo staff). Rich's
+time is listed separately because it is the scarcest input.
+
+\subsection{WS1 --- Discovery \& decisions (week 1)}
+\begin{itemize}
+  \item Inventory where contacts live today (Outlook, Excel, LinkedIn export, phone) and how many
+  there are; list past clients and their relationship owners.
+  \item Decide HubSpot tiers, Claude plan, and whether SourceScrub is worth its contract versus
+  ACG's own attendee app and LinkedIn Sales Navigator.
+  \item Define the 3--4 personas (e.g.\ PE Operating Partner, Deal Partner, Portfolio CEO/CFO,
+  Board member) and the sectors used for tagging.
+  \item Write the review rule: who approves AI drafts before anything is sent.
+\end{itemize}
+\textbf{Effort:} \hrs{8--12} implementer; \hrs{2--3} Rich.
+
+\subsection{WS2 --- Voice content bank \& ``Rich's voice'' skill (weeks 1--3)}
+\begin{itemize}
+  \item Collect 30--60 samples of Rich's writing: LinkedIn posts, sent emails he's proud of,
+  deck narratives, case write-ups, and a short recorded interview transcript if written
+  samples are thin.
+  \item Distill them into a skill: tone rules, signature phrases, words he never uses, how he
+  opens and closes, length limits, compliance rules (no client names without permission, no
+  return claims), and 8--12 annotated example emails and posts by persona.
+  \item Build a Claude Project holding the content bank (case summaries, service lines,
+  proof points) so drafts can cite real material.
+  \item \textbf{Calibration loop:} generate 20 drafts across personas; Rich marks each one ``sounds
+  like me / doesn't''; revise the skill; repeat 2--3 rounds.
+  \item Version the skill files (in Git or a shared folder) so the app and the API use the
+  identical text. This is the fix for the long-prompt drift the slide mentions.
+\end{itemize}
+\textbf{Effort:} \hrs{20--30} implementer; \hrs{5--8} Rich (samples plus 2--3 review rounds).
+
+\subsection{WS3 --- HubSpot foundation (weeks 1--4)}
+\begin{itemize}
+  \item Set up the account, users, and email-domain authentication (SPF/DKIM/DMARC); connect
+  Rich's inbox and calendar.
+  \item Create custom properties: \texttt{persona}, \texttt{sector}, \texttt{event\_source}
+  (e.g.\ ACG Boston 2027), \texttt{relationship\_owner}, \texttt{past\_client},
+  \texttt{ai\_email\_subject}, \texttt{ai\_email\_body}, \texttt{ai\_draft\_status}.
+  \item Clean, de-duplicate, and import contacts and past clients; set lifecycle stages; record
+  opt-in status so the newsletter is compliant (CAN-SPAM; consent for any non-U.S.\ contacts).
+  \item Build the newsletter template and a monthly send; build 2--3 sequences (pre-event,
+  post-event, past-client re-engagement).
+  \item Set up post scheduling in LinkedIn's own scheduler (free); HubSpot social publishing
+  needs the Professional tier.
+  \item Build a dashboard: sends, opens, clicks, replies, and meetings, broken out by persona and
+  by event.
+\end{itemize}
+\textbf{Effort:} \hrs{25--40} implementer (import cleanup is the wildcard); \hrs{2--3} Rich.
+
+\subsection{WS4 --- Personalization engine (weeks 3--7)}
+\textbf{Stage B (Claude app, weeks 3--4).}
+\begin{itemize}
+  \item Connect the HubSpot connector in Claude; test read access to lists and write access to
+  notes, tasks, and properties\verify.
+  \item Write a second skill, ``Outreach drafter,'' that takes a contact record plus a trigger
+  (event, news, past engagement) and returns a subject, a 90--150-word body, and a LinkedIn
+  note, all in Rich's voice. It must use only facts present in the record or the content bank
+  and must never invent a personal detail.
+  \item Document the operator runbook: pull list $\rightarrow$ draft $\rightarrow$ review
+  $\rightarrow$ save to HubSpot $\rightarrow$ enroll in sequence.
+\end{itemize}
+\textbf{Stage C (API pipeline, weeks 5--7).}
+\begin{itemize}
+  \item Write a script (Python, built with Claude Code) that pulls contacts where
+  \texttt{ai\_draft\_status = needed}, calls the Claude API with the voice skill as a cached
+  system prompt, and writes subject, body, and \texttt{status = review} back to HubSpot.
+  \item Set up a HubSpot view or task queue so the reviewer can approve
+  (\texttt{status = approved}); the script then enrolls approved contacts in the sequence
+  through the HubSpot API, or the reviewer enrolls them in a few clicks from a saved view if
+  Starter's API does not allow enrollment\verify. The sequence inserts the
+  \texttt{ai\_email\_body} token.
+  \item Have the script take over the jobs HubSpot Professional workflows would otherwise do:
+  updating lifecycle stages, tagging by event, creating follow-up tasks when someone replies or
+  goes quiet, and flagging stale contacts. This is what lets Creo stay on Starter.
+  \item Add guardrails: skip contacts missing a persona or company; log every draft; cap the
+  batch size; rotate keys and keep them in a secrets store.
+  \item Optional: enrich each contact with recent company news before drafting (Claude's
+  web-search tool), with a cited source the reviewer can check.
+\end{itemize}
+\textbf{Effort:} Stage B \hrs{12--18}; Stage C \hrs{35--55}; \hrs{2--3} Rich (approving the first
+batches).
+
+\subsection{WS5 --- SourceScrub \& event prospecting (weeks 4--6, before the first ACG event)}
+\begin{itemize}
+  \item Run a demo or trial to confirm SourceScrub has usable attendee data for the specific ACG
+  events Creo attends\verify.
+  \item Build saved searches: PE firms by fund size and sector, and portfolio companies matching
+  Creo's ideal client.
+  \item Export, map fields to HubSpot properties, tag \texttt{event\_source}, and import.
+  \item Run the pre-event sequence 2--3 weeks out, ask for a meeting at the event, and run a
+  post-event follow-up within 48 hours.
+\end{itemize}
+\textbf{Effort:} \hrs{10--15} first event, then about \hrs{3--5} per event.
+
+\subsection{WS6 --- Claude for analysis (weeks 6--8)}
+\begin{itemize}
+  \item A weekly report, generated by Claude through the HubSpot connector or by a scheduled API
+  job reading a HubSpot export: results by persona and sector, which subject lines and topics
+  worked, overdue follow-ups, and replies that need Rich.
+  \item A monthly ``themes'' memo: recurring questions and objections from replies, which feed
+  the next LinkedIn post (closing the loop the slide describes).
+\end{itemize}
+\textbf{Effort:} \hrs{8--14} implementer.
+
+\subsection{WS7 --- Training, documentation \& handoff (weeks 7--9)}
+\begin{itemize}
+  \item Runbooks for each workflow; a 60-minute training session for Rich and his assistant; a
+  one-page ``how to update the voice skill.''
+  \item A 30-day hypercare period: fix issues and tune the skill based on reply data.
+\end{itemize}
+\textbf{Effort:} \hrs{8--12} implementer; \hrs{1--2} Rich.
+
+% ======================================================================
+\section{Time summary \& timeline}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\small
+\begin{tabular}{L{6.4cm} r r L{2.6cm}}
+\toprule
+\textbf{Workstream} & \textbf{Implementer} & \textbf{Rich} & \textbf{Weeks} \\
+\midrule
+WS1 Discovery \& decisions & 8--12 h & 2--3 h & 1 \\
+WS2 Voice bank \& skill & 20--30 h & 5--8 h & 1--3 \\
+WS3 HubSpot foundation & 25--40 h & 2--3 h & 1--4 \\
+WS4 Personalization (B then C) & 47--73 h & 2--3 h & 3--7 \\
+WS5 SourceScrub \& event prospecting & 10--15 h & --- & 4--6 \\
+WS6 Analysis \& reporting & 8--14 h & --- & 6--8 \\
+WS7 Training \& handoff & 8--12 h & 1--2 h & 7--9 \\
+\midrule
+\textbf{Total} & \textbf{126--196 h} & \textbf{12--19 h} & \textbf{7--10 weeks} \\
+\bottomrule
+\end{tabular}
+\end{center}
+With one implementer at about 20 h/week this is roughly 7--10 calendar weeks. If Option C is
+deferred, the total drops to about \textbf{90--140 h} and \textbf{5--6 weeks}. The critical
+path runs through the voice calibration (WS2): nothing should go to contacts until Rich has
+approved the voice.
+
+\textbf{Milestones.}
+\begin{enumerate}
+  \item Week 2: HubSpot live and authenticated; first voice skill draft.
+  \item Week 4: Voice approved; first human-reviewed batch sent with Option B.
+  \item Week 6: First event campaign run end to end (SourceScrub $\rightarrow$ HubSpot
+  $\rightarrow$ Claude $\rightarrow$ sequence).
+  \item Week 8: Option C pipeline live with an approval step; weekly analysis report running.
+  \item Week 9: Handoff and runbooks; begin 30-day hypercare.
+\end{enumerate}
+
+% ======================================================================
+\section{Platform choice: HubSpot Professional vs.\ Starter vs.\ Klaviyo}\label{sec:platform}
+% ======================================================================
+We compared the email/CRM platform options at Creo's likely size (about 1{,}000--1{,}500
+contacts). Prices are 2026 list prices reported by third-party pricing guides, not quotes for
+Creo; the guides disagree on some bands, so confirm on each vendor's live pricing page.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}\small
+\begin{tabular}{L{3.6cm} L{2.6cm} L{2.4cm} L{5.2cm}}
+\toprule
+\textbf{Option} & \textbf{Approx.\ monthly} & \textbf{Year 1} & \textbf{Fit for Creo} \\
+\midrule
+HubSpot Marketing Hub Professional & \$800--890, 3 seats, 2{,}000 contacts &
+\$13--14k incl.\ required \$3{,}000 onboarding & Full fit, but most of the price buys workflow
+automation and social publishing that the Claude script and LinkedIn can cover \\
+\addlinespace
+Klaviyo Email & \$30--45 (501--1{,}500 active profiles) & \$400--550 \emph{plus a separate CRM} &
+Poor fit: built for e-commerce, so it lacks a CRM and inbox sequences \\
+\addlinespace
+\textbf{HubSpot Starter + Claude script} \emph{(recommended)} & \$30--40 (2 seats at
+\$15--20) & \textbf{\$400--500} & Good fit: one system of record and personal sequences, with
+the automation handled by the script \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Why not Klaviyo}
+Klaviyo is cheaper on paper, but it is built for online retailers selling to consumers:
+newsletters and SMS triggered by browsing and purchase events, billed per active profile. Creo
+needs relationship outreach between businesses, and Klaviyo is missing the core pieces:
+\begin{itemize}
+  \item \textbf{No CRM.} It has no deals, pipeline, relationship owners, or meeting logging. Creo
+  would still need to buy and connect a CRM, which undoes most of the saving and breaks the
+  slide's ``one home for contacts, sends and results.''
+  \item \textbf{No sales sequences from Rich's own inbox.} Klaviyo sends through a marketing
+  setup, so a personal note to a PE partner would look like a mass email, which defeats the
+  ``feel 1:1'' goal.
+  \item \textbf{No LinkedIn scheduling and weak sales reporting.} The weekly Claude analysis would
+  have to stitch together two systems.
+\end{itemize}
+
+\subsection{The real cost lever: Starter plus the script}
+Most of HubSpot Professional's price pays for automated workflows and social publishing. In
+this plan the Option~C script already does the hard part: selecting contacts, drafting,
+tracking approval status, and enrolling contacts. Splitting the work this way keeps Creo on Starter:
+\begin{itemize}
+  \item \textbf{HubSpot Starter:} contacts, CRM, newsletter, basic sequences, open/click/reply
+  tracking, dashboards.
+  \item \textbf{Claude script:} drafting, approval status, sequence enrollment, lifecycle updates,
+  follow-up tasks.
+  \item \textbf{LinkedIn's own scheduler:} posts (free).
+\end{itemize}
+The trade-off is about \textbf{10--15 more build hours} (already included in WS4 and the time
+summary) and one more script to maintain. Year-one platform cost falls from roughly \$13{,}000
+to under \$1{,}000.
+
+\begin{caution}
+\textbf{Confirm with HubSpot before committing:} (1)~that Starter includes sequences at the
+volume Creo plans to send; (2)~that Starter's API lets the script write the custom
+\texttt{ai\_*} fields and enroll contacts in sequences; (3)~current Starter seat pricing,
+including any new-customer promotion. \textbf{Upgrade path:} move to Professional later only if
+outreach volume or reporting needs outgrow the script; the data model and skills carry over
+unchanged.
+\end{caution}
+
+\textbf{Pricing sources (accessed 14 October 2026).}
+{\small
+\begin{itemize}
+  \item SendX, Klaviyo pricing 2026: \url{https://www.sendx.io/blog/klaviyo-pricing-plans-costs-alternatives-2026}
+  \item Spoks, Klaviyo pricing breakdown: \url{https://spoks.com/resources/klaviyo-pricing-breakdown}
+  \item Omnisend, Klaviyo pricing: \url{https://www.omnisend.com/blog/klaviyo-pricing/}
+  \item MoEngage, Klaviyo pricing guide 2026: \url{https://www.moengage.com/blog/klaviyo-pricing/}
+  \item Tinycommand, HubSpot pricing explained (2026): \url{https://tinycommand.com/blogs/hubspot-pricing-explained}
+  \item Agiled, HubSpot pricing 2026: \url{https://agiled.app/blog/hubspot-pricing}
+  \item Featurebase, HubSpot pricing 2026: \url{https://featurebase.app/blog/hubspot-pricing}
+  \item Automation Atlas, HubSpot pricing 2026: \url{https://automationatlas.io/answers/hubspot-pricing-explained-2026/}
+\end{itemize}}
+
+% ======================================================================
+\section{Running cost (estimated)}
+% ======================================================================
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\small
+\begin{tabular}{L{6.6cm} L{6.4cm}}
+\toprule
+\textbf{Item} & \textbf{Estimate} \\
+\midrule
+Claude app (Pro, or Team for shared skills) & About \$20--30 per user per month\verify \\
+Claude API (Opus 5.5: \$4 / \$20 per million input/output tokens) &
+About \$0.02--0.05 per drafted email; 1{,}000 emails/month is about \$20--50, and about half
+that via Batch API with a cached voice prompt \\
+HubSpot Starter Customer Platform, 2 seats & About \$30--40 per month
+(about \$360--480 per year)\verify \\
+SourceScrub & Annual contract; quote-based, often five figures\verify \\
+Script hosting & \$0--10 per month \\
+\bottomrule
+\end{tabular}
+\end{center}
+With HubSpot on Starter, the platform and AI together run under about \$100 a month. The real
+costs are the SourceScrub contract and the build hours. Prices marked \verify{} are list-price ranges we have not
+quoted for Creo; confirm them with each vendor before the 12/2 proposal.
+
+% ======================================================================
+\section{Risks \& safeguards}
+% ======================================================================
+\begin{caution}
+\begin{itemize}
+  \item \textbf{Hallucinated personalization.} An invented ``congrats on the new role'' is worse
+  than no personalization. The skill must use only facts in the record or a cited source, and a
+  human reviews drafts until trust is earned.
+  \item \textbf{Voice drift.} Keep one versioned skill file; re-run the 20-draft calibration
+  whenever it changes.
+  \item \textbf{Deliverability.} Authenticate the domain, warm up volume gradually, send 1:1
+  outreach as sequences from Rich's inbox, and keep the newsletter on marketing email with
+  unsubscribe handling.
+  \item \textbf{Confidential client data.} Never put client deal data into prompts beyond what's
+  already approved for marketing. Use a business Claude plan (commercial terms; no training on
+  Creo's data) and keep API keys out of shared documents.
+  \item \textbf{LinkedIn terms.} No automation tools that send DMs or scrape LinkedIn; drafts only.
+  \item \textbf{SourceScrub fit.} Attendee coverage for specific ACG chapters is unverified ---
+  run a trial before signing an annual contract.
+\end{itemize}
+\end{caution}
+
+% ======================================================================
+\section{Open questions for Creo}
+% ======================================================================
+\begin{enumerate}
+  \item Where do contacts live today, and roughly how many are there?
+  \item Who besides Rich will run the workflows (an assistant, an associate, or us)?
+  \item Does Creo already have any HubSpot or SourceScrub licenses?
+  \item Which ACG events in the next six months are the targets?
+  \item What monthly outreach volume is the goal: 50, 500, or 5{,}000 contacts?
+  \item Which past posts, decks, and cases can go into the content bank, and which are
+  confidential?
+\end{enumerate}
+
+\begin{courseangle}
+\textbf{Course angle (ENT 105).} This is the inbound engine the syllabus is built around:
+HubSpot as the system of record, persona-driven messaging, and lead generation measured weekly.
+The weekly Claude analysis report is designed to be the agenda for a weekly marketing management
+meeting --- what we sent, to which persona, what worked, and what to do next week.
+\end{courseangle}
+
+\end{document}
