@@ -1,0 +1,708 @@
+\documentclass[11pt]{article}
+
+% ----------------------------------------------------------------------
+%  Creo Advisors — Competitive Benchmark (client-safe)
+%  Benchmarks the three names the client supplied: "The Summer Group",
+%  Rick Williams / Create the Future, and Quadrillion Partners.
+%  Compile with: pdflatex competitive-benchmark.tex  (run twice so the
+%  table of contents resolves).
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{array}
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!55!black,
+  citecolor=black,
+  pdftitle={Creo Advisors --- Competitive Benchmark},
+  pdfauthor={ENT 105 Creo Advisors Team}
+}
+
+\titleformat{\section}{\large\bfseries\color{blue!30!black}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\setlist[itemize]{leftmargin=1.4em,topsep=2pt,itemsep=1.5pt}
+\emergencystretch=1.5em
+\setlist[enumerate]{leftmargin=1.6em,topsep=2pt,itemsep=1.5pt}
+
+% Confidence badges -----------------------------------------------------
+\newcommand{\high}{\textcolor{green!45!black}{\textbf{[High confidence]}}}
+\newcommand{\medium}{\textcolor{orange!80!black}{\textbf{[Medium confidence]}}}
+\newcommand{\unv}{\textcolor{red!75!black}{\textbf{[Unverified]}}}
+\newcommand{\self}{\textcolor{gray!70!black}{\textit{(self-reported)}}}
+
+% Callout box -----------------------------------------------------------
+\newtcolorbox{takeaway}{colback=blue!4,colframe=blue!40!black,
+  boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newtcolorbox{caution}{colback=orange!6,colframe=orange!70!black,
+  boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+
+\title{\textbf{Creo Advisors}\\[2pt]
+\large Competitive Benchmark\\[4pt]
+\normalsize The Summer Group (Craig Group) \,$\cdot$\, Rick Williams / \emph{Create the Future} \,$\cdot$\, Quadrillion Partners}
+\author{\normalsize ENT 105 --- Creo Advisors team}
+\date{\normalsize 20 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{takeaway}
+\textbf{One-paragraph thesis.} The three names Creo asked us to benchmark are not
+three versions of the same competitor; they are three \emph{archetypes} of how a small
+advisory brand reaches senior buyers. \textbf{Craig Group} (the firm we believe is meant
+by ``The Summer Group'') is a PE-exclusive go-to-market boutique that wins on a
+razor-sharp niche, trademarked products timed to the deal cycle, and founder-led
+association networking. \textbf{Rick Williams} is a one-person thought-leadership
+brand that wins on a single trademarked idea, an email list he claims at 50,000
+readers, and relentless repurposing of each piece of writing across newsletter,
+bylines, podcast, and keynotes. \textbf{Quadrillion Partners} is an operator-led
+boutique that wins on quotable anti-consultant positioning, a catalog of eight
+named, priced, outcome-ranged sprints, and a coordinated book-launch content stack.
+None of the three has what Creo's brief asks for --- a sustained engine that puts a
+message in front of 2,000+ decision makers every 8--12 weeks --- and each has a
+visible gap Creo can occupy. The practical conclusion: \textbf{copy the mechanics
+(named offers, email-first capture, founder-as-channel, sequenced launches), avoid
+the failure modes (bursty cadence, unaudited reach claims, hero-dependence,
+inconsistent numbers), and differentiate on the three things none of them can show:
+a named team, attributed proof, and a cadence that actually holds.}
+\end{takeaway}
+
+\tableofcontents
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+% ======================================================================
+\section{Purpose, Scope, and an Identification Note}
+% ======================================================================
+
+\subsection{Why these three}
+Creo's project brief asks the team to sharpen the firm's value proposition, segment its
+buyers, and build a ``scalable, repeatable digital marketing engine'' with a message in
+front of 2,000+ decision makers every 8--12 weeks. The client then named three
+benchmarks. We read that list as a request to answer four questions for each:
+
+\begin{enumerate}
+  \item \textbf{What do they sell, to whom, and how is it packaged?} (positioning,
+  productization, pricing signals)
+  \item \textbf{What proof do they show?} (and how much of it is verifiable)
+  \item \textbf{How does their marketing engine actually run?} (channel by channel,
+  with cadence and audience-size evidence)
+  \item \textbf{What should Creo copy, avoid, or position against?}
+\end{enumerate}
+
+Everything here comes from public sources read on 19--20 October 2026 (firm websites,
+LinkedIn, press wires, podcast directories, publisher pages, company registries).
+Figures are tagged \self{} where only the firm asserts them. Items we could not confirm
+are listed in \S8 rather than silently dropped.
+
+\subsection{``The Summer Group'' --- who we think is meant \medium}
+\begin{caution}
+\textbf{No advisory firm named ``The Summer Group'' exists in the PE value-creation,
+strategy, or growth-consulting space.} Searches on the exact name and its variants
+(Summer Group, Summers Group, Sommer Group, Summus Group) surfaced only an insurance
+agency in La Habra, California, an executive-search firm, a Buffalo PE investor
+(Summer Street Capital), a real-estate diligence shop, and a fintech consultancy. None
+is a plausible benchmark for Creo.
+
+The best match is \textbf{Craig Group} (\url{https://www.craiggroup.io}), founded in 2019
+by \textbf{Summer Craig} in Houston, Texas. Its legal entity is \emph{Summer Craig
+Consulting LLC}, its original LinkedIn handle was \texttt{/company/summer-craig-consulting/},
+and it sells revenue-growth advisory exclusively to PE-backed lower-middle-market
+companies --- exactly the peer a Creo partner would hear described as ``Summer's
+group'' at an ACG event. We benchmark Craig Group below at roughly 75\% confidence and
+\textbf{recommend Creo confirm the name at the next weekly check-in} before this
+section is cited in the final plan.
+\end{caution}
+
+\subsection{Three archetypes, not three look-alikes}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{R{3.2cm} R{4.2cm} R{6.0cm}}
+\toprule
+\textbf{Benchmark} & \textbf{Archetype} & \textbf{What it is really a benchmark \emph{for}} \\
+\midrule
+Craig Group & PE-exclusive functional boutique & Niche discipline, deal-cycle-timed
+productized diagnostics, association embedding, PR habit \\
+Rick Williams & Personal thought-leadership brand & Email-first audience building, one
+owned framework, write-once/publish-everywhere repurposing \\
+Quadrillion Partners & Operator-led productized boutique & Quotable anti-consultant
+positioning, named/priced sprint catalog, sequenced book-launch stack \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{Benchmark at a Glance}
+% ======================================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{R{2.4cm} R{3.2cm} R{3.2cm} R{3.2cm} R{2.9cm}}
+\toprule
+ & \textbf{Craig Group} & \textbf{Rick Williams} & \textbf{Quadrillion Partners} & \textbf{Creo today} \\
+\midrule
+\endhead
+HQ / founded & Houston TX, 2019 & Boston/Medford MA, LLC (date n/a); book 2024 & Plano (Dallas) TX, 2012 & Pembroke MA, 2019 \\
+Size & 11--50 on LinkedIn; $\sim$23--30 staff + $\sim$25-person advisor bench \self & One person & $\sim$6 listed; one named principal & Small team; founder-led \\
+Buyer & PE sponsors and their \$50--350M portcos (LMM) & CEOs/boards of \$5--300M private cos; coaches & PE sponsors/portcos and public cos, \$200M--3B & PE sponsors, portcos, corporates \\
+Offer & GTM/RevOps strategy + embedded execution & Board seats, CEO advisory, keynotes, workshop, book & Value-creation plans + 8 execution sprints; interim C-suite & Strategy, Growth, Operations, Human Capital \\
+Named method & CG\texttrademark{} Process; Catalyst\texttrademark{}, Ignite\texttrademark{}, Conduit\texttrademark{} & Create the Future\textregistered{} (5 steps) & ``Decipher \& Deliver''; 8 named sprints; Lunation platform & ``Peak Performance''; no named diagnostic \\
+Pricing signal & $\sim$\$150K typical engagement; performance-based options \self & Not published & Fixed fee per sprint + success fee; ``no hourly'' & Not published \\
+Proof & $\sim$9 case studies, mostly anonymized; 36-logo wall & Endorsements (Joly, McMaster, Edmondson); testimonials & 8 anonymized case studies with \$ figures; ``\$1.2--1.4B EV'' \self & ``10x+ ROI,'' 15\% vs 6\% CAGR chart; 3 title-only testimonials \\
+Reach & 1.7K company / $\sim$5K founder LinkedIn & ``50,000'' newsletter readers \self & 942 company / $\sim$5K founder LinkedIn & Not captured; founder LinkedIn active \\
+Content cadence & Bursty: $\sim$1.5 posts/mo 2024, sprint early 2026 & 2--3 newsletter posts/mo; weekly podcast; monthly byline & Weekly blog since Sep 2026 only; 2--4 LinkedIn posts/wk & Insights hub dormant since Nov 2023 \\
+Email capture & Unnamed sign-up box & Form on every page (Constant Contact) & Unlabeled form on blog; book early-access & None \\
+Primary CTA & Contact / assessments & Newsletter sign-up; book; speaking & Calendly ``Book a working session'' on every page & ``Contact us'' + phone \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+% ======================================================================
+\section{Craig Group (``The Summer Group'')}
+% ======================================================================
+
+\subsection{Snapshot \high}
+Craig Group is a Houston-based, technology-enabled sales and marketing advisory firm
+that works ``exclusively with private-equity-backed, lower middle-market companies.''
+Founder Summer Craig came out of HomeAway (through its IPO), Omnicom, Publicis, AT\&T,
+and AOL, and ran a large marketing budget at Gulf States Toyota, the firm's first
+client. The leadership page lists nine leaders (including partners hired from SBI's PE
+practice and Consero in 2024--26), about 25 ``Go-To-Market Principals'' (a bench of
+fractional advisors), and roughly 11 delivery staff spanning RevOps, paid search,
+copy, design, and video. Industries: industrial, manufacturing, energy, SaaS,
+healthcare, B2B services. The firm is a HubSpot Gold and Google partner, an ACG
+Houston Silver annual sponsor, and Summer Craig joined the ACG Houston board in
+September 2025.
+
+\textbf{Business-model signals} \self{} (from the founder's own podcast interviews):
+a typical new engagement is about \$150K; each partner is expected to land one new
+client per quarter; gross margin near 70\%; customer-acquisition cost near 30\% of
+revenue (which she says she wants to halve); sales cycles of nine months or more
+because sponsors vet the firm first and then introduce it to portfolio CEOs; and the
+firm has ``engaged about 300 of about 3,000'' target PE firms. Early growth was
+roughly 90\% referral.
+
+\subsection{Positioning and messaging \high}
+\begin{itemize}
+  \item Hero: \emph{``Built for Private Equity. Powered by Results.''} /
+  \emph{``Accelerating Revenue Growth for PE-Backed Businesses''} /
+  \emph{``From Growth Stalls To Scalable Growth Strategy.''}
+  \item Organizing idea: \emph{``Revenue is a Team Sport''} (marketing, sales, and
+  customer success aligned); \emph{``Impact that Adds Total Enterprise Value''};
+  \emph{``a tech-savvy extension of your management team''}; \emph{``in months, not
+  years.''}
+  \item The founder states publicly that she \textbf{dropped the phrase ``strategic
+  digital advisory''} because PE investors did not understand it, and re-languaged
+  everything around value creation, enterprise value, and exit multiples. This is the
+  single most transferable messaging lesson in the benchmark set.
+\end{itemize}
+
+\subsection{Services and productization \high}
+\begin{itemize}
+  \item \textbf{Trademarked system.} The CG\texttrademark{} Process (Discover / Launch /
+  Evaluate) maps to three named products: \textbf{Catalyst\texttrademark{}} (diagnostic
+  and GTM plan), \textbf{Ignite\texttrademark{}} (ongoing execution and RevOps), and
+  \textbf{Conduit\texttrademark{}} (analytics; since January 2025 a machine-learning
+  forecasting tool, extended in November 2025 to ``board-ready scenario planning, on
+  demand'').
+  \item \textbf{Deal-cycle-timed offers.} \emph{GTM Due Diligence} (a ``rapid 2--3 week
+  sprint'' producing red, yellow, or green risk flags and a 100-day plan); \emph{GTM
+  Exit-Readiness Assessment} (6--8 weeks, run 12--18 months before exit, feeding the
+  CIM and equity story); Strategic Growth Alignment; Sales Improvement Training.
+  \item \textbf{Delivery model.} Strategy plus embedded execution --- the firm builds
+  the CRM/martech stack, runs campaigns, and provides fractional or interim CRO
+  capacity. Pricing is described as ``fully transparent'' with ``options for
+  performance-based structure''; no rate card is published.
+\end{itemize}
+
+\subsection{Proof and claims}
+Self-reported case studies include ``doubled revenue'' at a named client, a PE-backed
+equipment-rental company whose leads went from 30 to 120 per month, win rate from 10\%
+to 65\%, and job margin from 25\% to 43\%, and a manufacturer with ``ROI up to 20x.'' A
+sponsored-style CEOWORLD piece (May 2024) calls the firm a ``trusted partner to more
+than a dozen PE firms'' and names AEA Investors, Cyprium, Energize Capital, and
+Golden Gate Capital. Third-party footprint is limited to ACG sponsor and board
+listings, a Kayo Conference Series community spotlight (June 2026), and wire-release
+syndication. \textbf{No sponsor appears on a case study, and no metric is
+independently verified.} Awards are marketing-craft awards (AMA Houston, BMA Houston)
+rather than PE or consulting recognition.
+
+\subsection{Marketing engine by channel \high}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{R{2.6cm} R{6.6cm} R{4.0cm}}
+\toprule
+\textbf{Channel} & \textbf{What they do} & \textbf{Cadence / scale} \\
+\midrule
+LinkedIn (company) & Event recaps, articles, hires & 1,738 followers; $\sim$2--3 posts/week when active \\
+LinkedIn (founder) & PE exits, board reporting, event posts; 3 native articles (last July 2024) & $\sim$5K followers; $\sim$2--3/week incl.\ reposts \\
+LinkedIn Live & Three episodes, Dec 2024--Jan 2025 & Burst, not sustained \\
+Blog & $\sim$80 posts since July 2021 on CRO, customer success, operating-partner topics & $\sim$1.5/month in 2024; 1--2/week in Jan--Feb 2026, then thin \\
+Newsletter & Unnamed HubSpot sign-up (``expert tips, industry trends'') & Cadence and archive not visible \\
+Podcasts (guest) & $\sim$9 guest spots Aug 2024--Jan 2025 (Consulting Success, Deal Scout, Into the Corner Office, etc.); no owned show & Heavy late-2024 push; quiet since \\
+Speaking / events & ACG NY Healthcare moderator (Mar 2025), ACG Houston DealFlow panel (Sep 2025), Houston Smart Business Dealmakers (Nov 2025) & $\sim$3--5/year, Texas-heavy \\
+PR & Wire release for every partner hire and product update & $\sim$2--3/year \\
+Lead magnets & The two assessments are the funnel; no gated reports, surveys, or scorecards & None \\
+Outbound & Partner BD quotas; two dedicated BD hires in 2025--26; list of $\sim$3,000 PE firms & The actual engine \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Strengths and weaknesses}
+\textbf{Strengths.} (1) A one-line exclusion (``exclusively PE-backed LMM'') that
+makes the firm instantly legible to sponsors. (2) Products named, trademarked, and
+timed to the deal cycle (diligence $\rightarrow$ 100-day $\rightarrow$ exit-readiness)
+with fixed durations and outputs a deal team can drop into an IC memo. (3)
+Investor-language discipline. (4) Deep ACG/Kayo embedding plus a repeatable PR habit.
+(5) The founder as the visible face: podcast guesting, panel moderation, a board seat.
+
+\textbf{Weaknesses.} (1) Small reach and a bursty cadence --- quiet for most of 2025,
+a sprint in early 2026 --- nothing like an every-8--12-weeks engine. (2) The newsletter
+is a bare box with no name, archive, or cadence; no owned podcast, no annual survey or
+benchmark, no gated asset. (3) Proof is anonymized and self-reported. (4) A
+Texas/ACG-centric footprint with little Northeast visibility. (5) Scope is sales,
+marketing, and RevOps only; no pricing, operations, integration, or P\&L-wide value
+creation. Growth remains mostly referral, with CAC the founder herself calls too high.
+
+% ======================================================================
+\section{Rick Williams / \emph{Create the Future}}
+% ======================================================================
+
+\subsection{Snapshot \high}
+Rick Williams is a Boston-area solo thought-leadership brand built on one trademarked
+concept (Create the Future\textregistered{}), one book (\emph{Create the Future: Powerful
+Decision-Making Tools for Your Company and Yourself}, Amplify Publishing, September
+2024), one five-step framework (Define the challenge / Imagine success / Create options
+/ Evaluate barriers / Choose the future), and a hub-and-spoke content engine. His
+credibility stack --- physicist, Harvard Business School, Arthur D. Little, founder and
+CEO of a multifamily real-estate company, board chair --- is repeated verbatim on every
+surface. The legal entity, Williams Advisory Partners, LLC, offers ``CEO and board
+advisory services for middle market technology companies'' but has no clients,
+pricing, case studies, or independent press footprint. \textbf{His audience is general
+CEOs, founders, and directors of \$5--300M private companies, not PE sponsors.}
+
+\subsection{Positioning and messaging \high}
+\begin{itemize}
+  \item \emph{``Helping Leaders Succeed.''} / \emph{``Leaders create the future by the
+  decisions they make.''} / \emph{``Create the Future is about how to decide --- not what
+  to decide.''}
+  \item \emph{``An engaged board of directors is a value accelerator for every
+  company''}; the CEO of a \$5--300M company has a ``lonely job.''
+  \item The framework is pitched as replacing ``a \$500,000 consulting engagement'' ---
+  i.e., he positions \emph{against} firms like Creo, selling tools instead of hours.
+\end{itemize}
+
+\subsection{What he sells}
+Board seats (several life-science and fintech directorships, with CEO coaching bundled
+in); CEO/board advisory under Williams Advisory Partners; two keynotes (``Making
+Difficult Decisions in a Time of Change'' and ``Make Your Board of Directors into a
+Value Accelerator'') with a key-takeaways handout; a Create the Future\textregistered{}
+workshop for leaders ``and their coaches and consultants''; and the book (\$35 retail,
+\$5 off on his site, Kindle and Audible, a free introductory chapter as the lead
+magnet, and a bulk-quote option). No fees are published and no speaker-bureau listing
+was found.
+
+\subsection{Content engine by channel \high}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{R{2.4cm} R{6.4cm} R{4.4cm}}
+\toprule
+\textbf{Channel} & \textbf{Mechanics} & \textbf{Cadence / audience evidence} \\
+\midrule
+Newsletter & Constant Contact; name/email form on every page; blog archive of
+$\sim$150 posts & $\sim$2--3 posts/month through 2026. ``50,000 readers'' \self{} ---
+no third-party verification \\
+Bylines & CEOWORLD is the workhorse (28 bylines 2018--Oct 2026, Executive Council
+member); also Wiley \emph{Board Leadership} (2024, 2026), \emph{Chief Executive},
+\emph{Private Company Director}, Forbes India & $\sim$every 4--6 weeks in 2026; blog
+posts are visibly repurposed into bylines under the same titles \\
+Podcast (owned) & \emph{Create the Future with Rick Williams} --- launched $\sim$Q1
+2026; Apple, Spotify, iHeart, YouTube & Weekly (Wednesdays), 28--29 episodes, 37--44
+min; guests are small-company CEOs, coaches, nonprofit leaders --- no PE sponsors \\
+Podcast (guest) & Marketer of the Day (twice), OnBoards, Everyday MBA, HR for Humans
+at Work, and others & Roughly monthly ``borrowed audience'' appearances \\
+Speaking & Heckerling Institute luncheon (Jan 2026), trade associations, HBS alumni
+board program; speaker sheet, keynote reel, media kit all downloadable & Regional and
+trade venues; no Vistage/YPO/ACG/NACD found despite the Vistage foreword \\
+LinkedIn / social & Profile exists; Instagram 11 followers and stale; X and Facebook
+present & Follower count and cadence could not be read; social is clearly secondary \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A notable mechanic: his podcast \textbf{guest-application form} screens applicants by
+organization size and revenue and explicitly invites ``podcast hosts open to reciprocal
+guesting'' --- a deliberate guest-swap growth loop.
+
+\subsection{Strengths and weaknesses}
+\textbf{Strengths.} (1) Ruthless message discipline --- one owned, trademarked concept
+and one phrase set, repeated everywhere. (2) Email-first: capture on every page; the
+list is the asset, and each piece is written once for the newsletter and then
+syndicated to blog, CEOWORLD, Wiley, and podcast topics. (3) Pre-packaged, dated sales
+collateral (speaker sheet, keynote summaries, media kit, free chapter) that lowers
+friction for bookers. (4) A borrowed-audience loop and relentless citation of
+high-profile endorsers. (5) Newsjacking (executive pay, board firings) keeps governance
+content timely.
+
+\textbf{Weaknesses.} (1) A personal brand, not a firm engine: no team, no case
+studies, no named clients, no service pages. (2) Audience mismatch for Creo --- no PE
+sponsors, operating partners, or portfolio CEOs anywhere in guests, venues, or
+articles. (3) Reach claims are unaudited and public engagement signals are thin (one
+Apple rating; three Goodreads ratings). (4) Social channels are neglected, so the
+newsletter does its work in private with no visible social-proof flywheel. (5)
+Content is reflective and essayistic rather than outcome-quantified --- little a PE
+diligence lens would score as evidence.
+
+% ======================================================================
+\section{Quadrillion Partners}
+% ======================================================================
+
+\subsection{Snapshot \high}
+Quadrillion Partners (legal entity Quadrillion Technology Partners, LLC; founded 2012;
+Plano, Texas) describes itself as ``operator-led performance improvement for PE-backed
+and public companies'' delivering ``EBITDA, margin, and working capital gains through
+execution sprints.'' The only person named anywhere on the site is founder
+\textbf{George Stelling} (first CIO of NVIDIA; pricing and transformation at ON
+Semiconductor under TPG; interim FP\&A/M\&A at Synaptics; Bain and PwC; co-founder of
+Prophet Equity, 2007--11; Tuck MBA). Directories list about six employees; the team
+page returns a 404; the ``Network'' page promises ``zero consultants'' on
+success-based compensation but names no members. Stelling also runs three affiliated
+brands --- Lunation (an execution-tracking platform), Brilliant Build (digital-twin
+simulation), and Silicon Century Capital (an investing vehicle with an empty site).
+In October 2026 he published \emph{Decipher \& Deliver}, whose title doubles as the
+firm's tagline.
+
+\subsection{Positioning and messaging \high}
+\begin{itemize}
+  \item \emph{``Decipher \& Deliver.''} / \emph{``Most plans fail in execution, not
+  strategy. We run both.''} / \emph{``Outputs are captured value, not decks.''}
+  \item \emph{``Consultancies recommend. QP delivers.''} --- explicit anti-positioning
+  against McKinsey, Bain, and BCG, against PE operating partners (``surge capacity''),
+  and against interim-staffing firms (``a staffing firm owns the placement, QP owns the
+  result'').
+  \item PE page: \emph{``Hit the bridge, protect the return.''} / \emph{``90-to-180-day
+  sprints tied to the bridge, not 18-month transformations.''} Public-company page:
+  \emph{``The quarter is the unit of trust.''}
+  \item LinkedIn headline: \emph{``EBITDA, cash \& enterprise value in 90 days.''}
+\end{itemize}
+
+\subsection{Services and productization \high}
+\begin{itemize}
+  \item \textbf{Three-phase model:} Plan (co-author the value-creation plan in
+  diligence, first 100 days, or mid-hold; ``fixed fee, portable'') $\rightarrow$ Execute
+  (8--12-week sprints with a senior lead and a weekly CEO/CFO cadence) $\rightarrow$
+  Realize (measured in EBITDA, margin, working capital, revenue).
+  \item \textbf{Eight named sprints}, each with a trigger condition, duration, and
+  outcome range: pricing and margin (8 wks, 200--400 bps), commercial operations (10
+  wks, 5--15\% revenue), digital and AI (12 wks, 15--25\% IT cost), operational
+  throughput (10 wks, 15--30\%), procurement (12 wks, 8--12\%), working capital (8 wks,
+  10--20\%), SG\&A (10 wks, 10--20\%), finance transformation (8 wks, 30\%+ faster
+  close). Interim CTrO/CFO/COO/CIO seats ``with decision rights and P\&L accountability.''
+  \item \textbf{Published commercial model:} ``Fixed fee per sprint, plus an optional
+  success fee tied to defined KPIs. No hourly billing.'' Fit is \$200M--\$3B revenue;
+  the FAQ explicitly declines sub-\$50M, pre-revenue, and ``diligence-only / pure
+  advisory'' work --- a public \emph{not-a-fit} list, which is rare for a boutique.
+\end{itemize}
+
+\subsection{Proof and claims}
+Self-reported: ``\$1.4B+ enterprise value since 2012'' on LinkedIn and the book site
+(the FAQ says \$1.2B+); \$100M of EBITDA captured in nine months as interim Chief
+Transformation Officer at ConvergeOne (the only named client); eight anonymized case
+studies with dollar figures (e.g., ``\$77M gross-margin uplift, \$400M document-solutions
+provider''); ten homepage testimonials attributed only by descriptor (``\$5B Private
+Equity Sponsor''). Third-party: one paid PR Newswire release (6 Oct 2026), three book
+endorsements, 16 LinkedIn recommendations. \textbf{No awards, press coverage, or
+analyst mentions were found.} Several credibility leaks are visible to any careful
+buyer: the two different enterprise-value totals, sprint lengths stated as both 8--12
+weeks and 90--180 days, a duplicated problem statement across two sprint cards, and
+``Lorem ipsum'' placeholder labels on the contact page.
+
+\subsection{Marketing engine by channel \high}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{R{2.6cm} R{6.4cm} R{4.2cm}}
+\toprule
+\textbf{Channel} & \textbf{What they do} & \textbf{Cadence / scale} \\
+\midrule
+Website & Webflow; three Calendly CTAs (working session, intro call, platform demo)
+on every page; book pre-order block; thin inner-page SEO & Static \\
+LinkedIn (company) & News-hook commentary (KPMG AI ROI, Deloitte cost survey, Nike
+cost program) tied back to a QP lesson & 942 followers; $\sim$2/week in launch window,
+six-week gap before \\
+LinkedIn (founder) & Primary channel; headline ``EBITDA, cash \& EV in 90 days'' &
+$\sim$5K followers; 3--4 posts/week during launch \\
+Email & Unlabeled form on blog; ``early access'' form on book microsite; no visible
+newsletter & List-building only \\
+Blog & Six posts, all 8 Sep--6 Oct 2026, categories mirroring the sprints; posts are
+book derivatives ending in a pre-order CTA & Weekly, but the blog is seven weeks old \\
+Book & \emph{Decipher \& Deliver}, dedicated microsite, endorsements, ``schedule a
+consultation'' & One-time launch, Oct 2026 \\
+Podcast / speaking & One guest appearance (Digital Transformation Podcast, Sep 2026); a
+2023 vendor-conference talk; no ACG/PEI presence & Rare \\
+PR & One wire release via a PR agency, republished on the blog & One-off \\
+Paid / video & None detected; Vimeo channel empty & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Strengths and weaknesses}
+\textbf{Strengths.} (1) Extremely sharp, quotable positioning built on a single
+contrast (operators vs.\ consultants), with a book title that doubles as the tagline.
+(2) A productized catalog: eight named sprints with duration and outcome range, a
+published fee model, and a public not-a-fit list. (3) Dense quantified proof and a
+credible founder CV. (4) A textbook thought-leadership \emph{launch stack} on a tiny
+budget: book $\rightarrow$ microsite $\rightarrow$ wire release $\rightarrow$ podcast
+$\rightarrow$ weekly derivative posts $\rightarrow$ founder LinkedIn amplification, all
+inside six weeks. (5) Frictionless conversion --- a calendar link on every page.
+
+\textbf{Weaknesses.} (1) A single-person firm in practice, with a 404 team page and a
+nameless ``network.'' (2) Tiny audiences and no newsletter. (3) A content engine seven
+weeks old and entirely book-driven; sustainability unproven. (4) Inconsistent numbers
+and placeholder text that undercut an ``operators, not consultants'' promise. (5)
+Brand sprawl across four Stelling-led entities. (6) No upper-funnel nurture --- no gated
+tool, webinar, or benchmark report; the funnel jumps from a LinkedIn post straight to
+``book a call.''
+
+% ======================================================================
+\section{Marketing-Engine Scorecard}
+% ======================================================================
+
+The scorecard rates each benchmark and Creo's current state on the capabilities the
+brief asks the team to build. Ratings are qualitative: \textbf{3} = a working,
+sustained capability; \textbf{2} = present but partial or bursty; \textbf{1} = token
+presence; \textbf{0} = absent. They reflect what is \emph{publicly observable} and are
+meant to focus effort, not to grade the firms.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{R{4.6cm} c c c c R{3.8cm}}
+\toprule
+\textbf{Capability} & \textbf{Craig} & \textbf{Williams} & \textbf{QP} & \textbf{Creo} & \textbf{Who sets the bar} \\
+\midrule
+One-line, exclusionary positioning & 3 & 2 & 3 & 1 & Craig / QP \\
+Named, productized offers & 3 & 2 & 3 & 0 & QP (catalog) \\
+Published commercial model & 1 & 0 & 3 & 0 & QP \\
+Quantified, attributed proof & 2 & 0 & 2 & 1 & Nobody --- open lane \\
+Named team / bench on site & 3 & 0 & 0 & 2 & Craig \\
+Email list with capture everywhere & 1 & 3 & 1 & 0 & Williams \\
+Sustained content cadence (12+ mo.) & 1 & 3 & 0 & 0 & Williams \\
+Owned podcast / video series & 1 & 3 & 0 & 0 & Williams \\
+Founder LinkedIn as channel & 2 & 1 & 3 & 1 & QP \\
+Earned/borrowed audiences (guesting, bylines) & 2 & 3 & 1 & 0 & Williams \\
+PE-native events (ACG, PEI, op-partner forums) & 3 & 0 & 0 & 1 & Craig \\
+PR / wire habit & 3 & 1 & 1 & 2 & Craig (Creo did this 2021--23) \\
+Lead magnet (survey, scorecard, diagnostic) & 1 & 2 & 1 & 1 & Nobody --- open lane \\
+Low-friction CTA (calendar, form) & 2 & 3 & 3 & 0 & QP / Williams \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{takeaway}
+\textbf{Reading the scorecard.} Each benchmark is strong on a \emph{different} column,
+and no benchmark is strong on more than about half of them. Two columns are empty
+across the whole set --- \textbf{attributed, quantified proof} and a \textbf{recurring
+lead-magnet asset} (survey, benchmark, or diagnostic). Those are the two Creo should
+own. Creo's own row is mostly zeros and ones today, but it is the only firm of the
+four with (a) a multi-person named team, (b) a prior record of primary research
+distributed by wire (the 2022 survey of 250+ executives), and (c) four P\&L-wide
+service lines rather than one function.
+\end{takeaway}
+
+% ======================================================================
+\section{Implications for Creo: Copy, Avoid, Differentiate}
+% ======================================================================
+
+\subsection{Copy the mechanics}
+\begin{enumerate}
+  \item \textbf{Name and number the offers (QP, Craig).} Creo's four service lines
+  should read like sprint cards: a trigger (``when the 100-day plan is slipping''), a
+  fixed duration, a named owner, and an outcome range Creo can substantiate. Time them
+  to the deal cycle --- diligence, first 100 days, mid-hold, 12--18 months pre-exit ---
+  the way Craig Group does, so a deal team knows \emph{when} to call.
+  \item \textbf{Speak investor language everywhere (Craig).} Summer Craig's public
+  lesson --- that sponsors did not understand ``strategic digital advisory'' --- applies
+  directly to ``peak performance'' and ``exemplary service.'' Lead with EBITDA bridge,
+  enterprise value, hold period, and exit multiple.
+  \item \textbf{Publish the commercial model and the not-a-fit list (QP).} A public
+  statement of fee structure and minimum engagement size is a trust signal in a
+  credence-good market and pre-qualifies inbound.
+  \item \textbf{Make the founder the channel (QP, Craig).} Company pages do not carry
+  boutiques; both PE-facing benchmarks run on the founder's personal LinkedIn.
+  Rich Vitaro's pedigree (AlixPartners, Parthenon) is currently under-told on the site
+  and should anchor the LinkedIn voice.
+  \item \textbf{Email-first capture (Williams).} A named newsletter, a sign-up form on
+  every page, and an archive. This is the single mechanism that most directly serves
+  ``2,000+ decision makers every 8--12 weeks,'' because it is the only channel Creo
+  would own outright.
+  \item \textbf{Write once, publish everywhere (Williams).} One cornerstone piece per
+  cycle becomes two or three newsletter issues, a byline (CEOWORLD-style outlets accept
+  practitioner contributors), a LinkedIn series, and a podcast or roundtable topic.
+  \item \textbf{Sequence launches instead of posting ad hoc (QP).} Anchor asset
+  $\rightarrow$ wire release $\rightarrow$ guest podcast $\rightarrow$ weekly derivative
+  posts $\rightarrow$ founder amplification. Creo ran the first step of this in 2022--23;
+  the benchmark shows what the rest of the chain looks like.
+  \item \textbf{A calendar link on every page (QP, Williams).} Replace ``Contact us +
+  phone'' with ``book a 30-minute working session'' and a short form.
+  \item \textbf{PE-native events and a PR habit (Craig).} ACG Boston, PEI Operating
+  Partners Forum, and a wire release for every meaningful hire, survey, or product
+  change.
+\end{enumerate}
+
+\subsection{Avoid the failure modes}
+\begin{itemize}
+  \item \textbf{Bursty cadence.} Craig Group goes quiet for most of a year; QP's engine
+  is seven weeks old; Creo's own hub has been dormant since November 2023. The brief's
+  8--12-week rhythm is only a differentiator if it holds for four quarters.
+  \item \textbf{Unaudited reach claims.} A headline ``50,000 readers'' or ``\$1.4B of
+  enterprise value'' without a source is a liability under a PE due-diligence lens.
+  Report list size, open rate, and follower growth as measured.
+  \item \textbf{Hero dependence.} Williams and QP are one person each. Creo should put
+  team authors on content, not just the founder.
+  \item \textbf{Inconsistent numbers and placeholder copy.} QP's \$1.2B/\$1.4B and
+  8--12-week/90--180-day conflicts are exactly what a diligence-trained buyer notices
+  first. One set of numbers, reviewed before publishing.
+  \item \textbf{Brand sprawl.} Four Stelling-led brands dilute QP's offer. Keep every
+  Creo asset under one name and one URL.
+\end{itemize}
+
+\subsection{Differentiate where none of them can}
+\begin{enumerate}
+  \item \textbf{Team over hero.} A real, named, multi-person bench with bios and
+  attributed testimonials. None of the three can show this.
+  \item \textbf{Attributed proof.} Even two or three case studies with a named sponsor
+  or portfolio CEO on record would exceed the entire benchmark set, which is anonymized
+  end to end. This is a Discovery-meeting ask.
+  \item \textbf{A recurring owned asset.} An annual Creo survey or benchmark (reviving
+  the 2022 motion) and a named diagnostic as the gated lead magnet. QP's only tool
+  lives on a separate site; Craig has none; Williams's is a free book chapter.
+  \item \textbf{P\&L-wide scope.} Craig Group is a sales-and-marketing shop; QP
+  excludes ``pure advisory''; Williams sells decision tools. Creo can own the full
+  value-creation bridge --- strategy, growth, operations, human capital --- in one firm.
+  \item \textbf{Boston/Northeast sponsor density.} Both PE-facing benchmarks are
+  Texas-centric. Creo's geography is an asset in a relationship-driven market.
+\end{enumerate}
+
+\subsection{Mapping to the brief's deliverables}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{R{4.0cm} R{9.2cm}}
+\toprule
+\textbf{Brief deliverable} & \textbf{What the benchmark contributes} \\
+\midrule
+Value proposition \& storytelling & Investor-language rewrite (Craig); one contrast
+line and named method (QP); one owned phrase repeated everywhere (Williams) \\
+Customer segmentation & Deal-stage segmentation (diligence / 100-day / mid-hold /
+pre-exit) layered on PE vs.\ corporate; explicit not-a-fit list \\
+Content strategy \& calendar & Cornerstone-piece-per-cycle model with
+write-once/publish-everywhere repurposing; sequenced launches, not ad-hoc posts \\
+Email marketing & Named newsletter, capture on every page, archive, measured list
+growth --- the owned channel behind ``2,000+ every 8--12 weeks'' \\
+Marketing operations \& metrics & Track what the benchmarks do not: list size, open
+rate, follower growth, sessions booked, cadence adherence \\
+Future capabilities playbook & Founder-as-channel plus team authors; wire-release
+habit; PE-native event calendar; gated diagnostic as lead magnet \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ======================================================================
+\section{What We Could Not Verify}
+% ======================================================================
+
+\begin{itemize}
+  \item \textbf{Identification.} That ``The Summer Group'' means Craig Group (see
+  \S1.2). The client should confirm.
+  \item \textbf{Craig Group.} Newsletter platform and cadence; YouTube statistics; any
+  paid or account-based spend; exact headcount (23, 26, 30, or 45 including the advisor
+  bench, depending on source); whether the logo wall shows clients or team alumni;
+  any revenue.
+  \item \textbf{Rick Williams.} LinkedIn follower count and cadence (profile blocked to
+  automated readers); YouTube subscribers; Amazon rank and review count; the April
+  2026 Navigation Sciences board appointment (no primary source found); the claimed
+  Private Directors Association national board seat (PDA's 2026 board announcement
+  does not list him); the ``50,000 readers'' figure; speaking fees; any clients of
+  Williams Advisory Partners.
+  \item \textbf{Quadrillion Partners.} X follower counts; Vimeo content; Amazon
+  bestseller claim and ``398 outlets'' syndication; the existence and role of a second
+  partner named in a stale directory listing; whether Silicon Century Capital is
+  active; any client names behind the testimonials.
+  \item \textbf{Creo.} We did not capture Creo's own LinkedIn follower counts or
+  posting cadence for this document; the Creo column in \S2 and \S6 draws on the June
+  2026 market-analysis baseline and a re-read of the public site on 20 October 2026
+  (Insights hub unchanged; still no newsletter or lead-capture form).
+\end{itemize}
+
+% ======================================================================
+\section*{Sources}
+% ======================================================================
+\small
+\textbf{Craig Group.}
+\url{https://www.craiggroup.io/} (home, services, why-us, our-people, case-studies,
+press, thought-leadership, newsletter pages);
+\url{https://www.craiggroup.io/go-to-market-due-diligence/};
+\url{https://www.craiggroup.io/go-to-market-exit-readiness-assessment/};
+\url{https://www.consultingsuccess.com/this-150000-rule-fuels-her-consulting-firm-with-summer-craig-podcast-345};
+\url{https://ceoworld.biz/2024/05/02/fueling-middle-market-growth-summer-craigs-integrated-sales-and-marketing-approach-for-sustainable-growth/};
+\url{https://kayoconferenceseries.com/community-spotlight-summer-craig-growth-grit-and-the-new-playbook-for-value-creation/};
+\url{https://www.accessnewswire.com/newsroom/en/business-and-professional-services/craig-group-welcomes-new-partner-ajay-joshi-929805};
+\url{https://www.acg.org/houston/sponsorship/annual-sponsorship/acg-houston-silver-annual-sponsors/craig-group};
+\url{https://www.smartbusinessdealmakers.com/houston/event-2025/speakers/summer-craig/};
+\url{https://www.linkedin.com/company/craiggroup/};
+\url{https://opencorporates.com/companies/us_tx/0803351092}.
+
+\medskip
+\textbf{Rick Williams.}
+\url{https://rickwilliamsleadership.com/} (home, about, blogs, articles, podcast,
+guest application, speaking, books, leadership-training, boards, media pages);
+\url{https://ceoworld.biz/author/rick-williams/};
+\url{https://amplifypublishinggroup.com/product/nonfiction/business-and-finance/entrepreneurship/create-the-future/};
+\url{https://www.goodreads.com/book/show/213172077-create-the-future};
+\url{https://podcasts.apple.com/us/podcast/create-the-future/id1861493479};
+\url{https://directory.libsyn.com/episode/index/show/onboards/id/33062147};
+\url{https://everydaymba.libsyn.com/tools-for-more-powerful-decision-making};
+\url{https://www.robertplank.com/?p=261899};
+\url{https://onlinelibrary.wiley.com/doi/10.1002/bl.70001};
+\url{https://www.crunchbase.com/organization/williams-advisory-partners};
+\url{https://www.privatedirectors.org/news/pda-board-elects-kearney-2026-chair-welcomes-new-leadership-and-members}.
+
+\medskip
+\textbf{Quadrillion Partners.}
+\url{https://www.quadrillionpartners.com/} (home, approach, network, faqs,
+case-studies, pe-sponsors-portfolios, public-company-operators, contact, blog);
+\url{https://www.prnewswire.com/news-releases/new-book-decipher--deliver-offers-an-operators-transformation-playbook-for-ceos-boards-and-pe-sponsors-302896665.html};
+\url{https://decipheranddeliver.com/};
+\url{https://lunation.com/};
+\url{https://www.brilliantbuild.com/our-team};
+\url{https://about.me/gstelling};
+\url{https://www.linkedin.com/company/quadrillion-partners};
+\url{https://www.linkedin.com/in/georgestelling/};
+\url{https://podcasts.apple.com/us/podcast/digital-transformation-podcast/id1461782790};
+\url{https://www.owler.com/company/quadrillionpartners}.
+
+\medskip
+\textbf{Creo baseline.}
+\url{https://creoadvisorsllc.com/} and \url{https://creoadvisorsllc.com/news-insights}
+(read 20 October 2026); the team's \emph{creo-advisors-market-analysis} (June 2026) for
+the earlier marketing-footprint findings; the client's \emph{Marketing Project Outline
+--- Fall 2026} for objectives and deliverables.
+
+\end{document}
